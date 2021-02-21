@@ -1,0 +1,201 @@
+.button1 {
+    background-color: #4CAF50; /* Green */
+    font-size: 12px;
+    border: none;
+    color: white;
+    padding: 20px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    border-radius: 4px;
+    height:20px; 
+    width:200px; 
+    margin: -20px -25px; 
+    position:relative;
+    top:80%; 
+    left: 42%;
+    justify-content: center;
+    align-items: center;
+    font-family: fantasy;
+    font-size: medium;
+   
+  }
+
+
+.control {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    
+  }
+  .control img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    filter: blur(25px);
+  }
+  .superior {
+    width: 70%;
+    height: 75%;
+    text-align: center;
+    background: url("/assets/img/valorant.jpg");
+    font-size: 30px;
+    color: #fff;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: black;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+  }
+  
+  .safehouse {
+    width: 57%;
+    height: 50%;
+    text-align: center;
+    background: url("/assets/img/safehouse.png");
+    color: #fff;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    bottom: 40%;
+    left: 1%;
+    right: 0;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+  }
+  
+  .control2 {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: #fff;
+    
+  }
+  
+  .superior2 {
+    width: 70%;
+    height: 75%;
+    text-align: center;
+    background: url("/assets/img/florian.jpg");
+    font-size: 30px;
+    color: #fff;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: black;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+  }
+  
+  .superior2_texto {
+    width: 35%;
+    height: 40%;
+    text-align: center;
+    background-color: #342446;
+    font-size: 30px;
+    color: #fff;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    bottom: 60%;
+    left: 0%;
+    right: 70%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+  }
+  
+  
+  
+  .control3 {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    
+  }
+  
+  .control3 img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    filter: blur(25px);
+  }
+  
+  .superior3 {
+    width: 55%;
+    height: 100%;
+    text-align: right;
+    background: url("/assets/img/Recorte.png");
+    font-size: 30px;
+    color: #fff;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 30%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+  }
+  
+  .superior3_texto {
+    width: 50%;
+    height: 60%;
+    text-align: center;
+    background-color: #342446;
+    font-size: 30px;
+    color: #fff;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    bottom: 20%;
+    left: 107%;
+    right: 0;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+  }
+  
+  
+  .h31{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+    margin: 20px 30px;
+  
+  }
+  
+  
+  .h3{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+    margin: 40px 30px;
+  
+  }
+  
+  .text {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small;
+    text-align: justify;
+    margin: 0 30px;
+  
+  }
