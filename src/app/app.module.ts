@@ -5,12 +5,22 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { BodyComponent } from './body/body.component';
+import { ReportComponent } from './report/report.component';
+import { LayoutComponent } from './layout/layout.component';
+import { MainComponent } from './main/main.component';
+import { DoacaoComponent } from './doacao/doacao.component';
+import { PerfilComponent } from './perfil/perfil.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    BodyComponent
+    BodyComponent,
+    ReportComponent,
+    LayoutComponent,
+    MainComponent,
+    DoacaoComponent,
+    PerfilComponent
   ],
   imports: [
     BrowserModule,
