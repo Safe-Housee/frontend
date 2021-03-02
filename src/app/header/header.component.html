@@ -1,7 +1,7 @@
 <header>
 
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark" style="background-color: #342446;">
-        <a class="navbar-brand" href="#"><img src="assets/img/H.png" alt="logo" width="30" height="35" ></a>
+        <a class="navbar-brand" [routerLink]="['main']"><img src="assets/img/H.png" alt="logo" width="30" height="35" ></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -9,7 +9,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link" [routerLink]="['main']">Home <span class="sr-only">(current)</span></a>
             </li>
     
             <li class="nav-item dropdown">
@@ -39,8 +39,8 @@
                 Mais
               </a>
               <div class="dropdown-menu" style="background-color: #342446;" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item text-white" href="#">Doações</a>
-                <a class="dropdown-item text-white" href="#">Denuncias</a>
+                <a class="dropdown-item text-white" [routerLink]="['doacao']">Doações</a>
+                <a class="dropdown-item text-white" [routerLink]="['report']">Denuncias</a>
                 <a class="dropdown-item text-white" href="#">Entre em Contato</a>
               </div>
             </li>
