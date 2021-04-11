@@ -10,6 +10,7 @@ import { LayoutComponent } from './layout/layout.component';
 import { MainComponent } from './main/main.component';
 import { DoacaoComponent } from './doacao/doacao.component';
 import { PerfilComponent } from './perfil/perfil.component';
+import { SalaComponent } from './sala/sala.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { PerfilComponent } from './perfil/perfil.component';
     LayoutComponent,
     MainComponent,
     DoacaoComponent,
-    PerfilComponent
+    PerfilComponent,
+    SalaComponent
   ],
   imports: [
     BrowserModule,

@@ -1,1 +1,121 @@
-<p>perfil works!</p>
+<router-outlet></router-outlet>
+
+<div class="control">
+    <img class="img-fluid"src="/assets/img/florian.jpg" />
+
+    <div class="superior2_texto">
+        <div class="fotoperfil">
+            <div class="quadrado">
+                <p class="text"> Foto de Perfil </p>
+                <p class="text"> Querido usuário fique ciente que sua foto de perfil será vista por inúmeras pessoas.
+                    caso a sua foto fira as diretrizes do site, sua conta poderá ser banida
+                </p>
+            </div>
+
+            <div class="col-sm-12 nome">
+                <input type="text" class="form-control" style="min-width:400px;"
+                name="nome" id="nome" placeholder="Matheus Lopes " >
+
+
+            </div>
+
+            
+
+            <div class="col-sm-12 email">
+
+                <input type="text" class="form-control" style="min-width:400px;"
+                name="email" id="email" placeholder="matheussan@hotmail.com" >
+
+
+            </div>
+
+            <div class="col-sm-12 telefone">
+
+                <input type="text" class="form-control" style="min-width:400px;"
+                name="telefone" id="telefone" placeholder="(55)13-99845122" >
+               
+            </div>
+
+            <div class=" col-sm-12 honra">
+                <input type="text" class="form-control" style="min-width:400px;"
+                name="honra" id="honra" placeholder="Honra aqui" >
+           
+            </div>
+
+
+            <button type="button" class="btn btn-success button1" data-toggle="modal" data-target="#siteModal">Alterar Perfil</button>
+
+
+
+        </div>
+    </div>
+</div>
+
+ <!-- Modal -->
+
+ <div class="modal fade" id="siteModal" tabindex="-1" role= "dialog">
+    <div class="modal-dialog " role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title">Cadastro</h5>
+            <button type="button" class="close" data-dismiss="modal">
+              <span>&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+          <div>
+          <h6 class="modal-title textmodal">Nome</h6>
+          <div class="col-sm-12 ">
+          <input type="text" class="form-control" 
+          name="nome" id="nome" placeholder="nome " >
+          </div>
+
+          <div>
+          <h6 class="modal-title textmodal">E-mail</h6>
+          <div class="col-sm-12 ">
+          <input type="text" class="form-control" 
+          name="E-mail" id="E-mail" placeholder="lopsan@gmail.com " >
+          </div>
+
+          <div>
+          <h6 class="modal-title textmodal">Data de Nascimento</h6>
+          <div class="col-sm-12 ">
+          <input type="date" class="form-control" 
+          name="dt_Nascimento" id="E-mail" placeholder="25/06/1994" >
+          </div>
+
+          <div>
+            <h6 class="modal-title textmodal">Celular</h6>
+            <div class="col-sm-12 ">
+            <input type="tel" class="form-control" 
+            name="cd_telefone" id="foneid" placeholder="(xx)xx-xx-xx-xx" >
+          </div>
+
+          <div>
+            <h6 class="modal-title textmodal">Endereço</h6>
+            <div class="col-sm-12 ">
+            <input type="end" class="form-control" 
+            name="ds_endereco" id="fendid" placeholder="Cidade Raccon City, rua Kendo n 2236 " >
+          </div>
+
+         
+          <p></p>
+
+          
+        </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Fechar</button>
+          
+          <button type="button" class="btn btn-outline-success">Cadastrar</button>
+
+        </div>
+
+
+
+      </div>
+
+    </div>
+
+  </div>

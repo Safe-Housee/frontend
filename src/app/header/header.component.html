@@ -30,7 +30,7 @@
               <div class="dropdown-menu" style="background-color: #342446;" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item text-white" href="#">Agenda</a>
                 <a class="dropdown-item text-white" href="#">Lista de Jogos</a>
-                <a class="dropdown-item text-white" href="#">Jogar</a>
+                <a class="dropdown-item text-white" [routerLink]="['sala']">Jogar</a>
               </div>
             </li>
     
@@ -52,7 +52,7 @@
           <div class="nav navbar-nav navbar-right " id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
               <li class="nav navbar-nav navbar-right ">
-                <a class="perfil" href="#">
+                <a class="perfil" [routerLink]="['perfil']">
                   <img src="assets/img/Grupo_10.png" alt="logo" width="30" height="35">
                 </a>
                 

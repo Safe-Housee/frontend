@@ -3,7 +3,7 @@
       <img class="img-fluid"src="assets/img/valorant2.jpg" />
       <div class="superior">
             <div class="safehouse"></div>
-            <button class="button1" type="button" >Entre para a Familia </button>
+            <button class="button1" type="button" data-toggle="modal" data-target="#siteModal" >Entre para a Familia </button>
       </div>
     </div>
   
@@ -41,3 +41,84 @@
     </div>
   
   </body>
+
+  <!-- Modal -->
+
+  <div class="modal fade" id="siteModal" tabindex="-1" role= "dialog">
+    <div class="modal-dialog " role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title">Cadastro</h5>
+            <button type="button" class="close" data-dismiss="modal">
+              <span>&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+          <div>
+          <h6 class="modal-title textmodal">Nome</h6>
+          <div class="col-sm-12 ">
+          <input type="text" class="form-control" 
+          name="nome" id="nome" placeholder="nome " >
+          </div>
+
+          <div>
+          <h6 class="modal-title textmodal">E-mail</h6>
+          <div class="col-sm-12 ">
+          <input type="text" class="form-control" 
+          name="E-mail" id="E-mail" placeholder="lopsan@gmail.com " >
+          </div>
+
+          <div>
+          <h6 class="modal-title textmodal">Data de Nascimento</h6>
+          <div class="col-sm-12 ">
+          <input type="date" class="form-control" 
+          name="dt_Nascimento" id="E-mail" placeholder="25/06/1994" >
+          </div>
+
+          <div>
+            <h6 class="modal-title textmodal">Celular</h6>
+            <div class="col-sm-12 ">
+            <input type="tel" class="form-control" 
+            name="cd_telefone" id="foneid" placeholder="(xx)xx-xx-xx-xx" >
+          </div>
+
+          <div>
+            <h6 class="modal-title textmodal">Endereço</h6>
+            <div class="col-sm-12 ">
+            <input type="end" class="form-control" 
+            name="ds_endereco" id="fendid" placeholder="Cidade Raccon City, rua Kendo n 2236 " >
+          </div>
+
+          <div>
+            <h6 class="modal-title textmodal">Senha</h6>
+            <div class="col-sm-12 ">
+            <input type="senha" class="form-control" 
+            name="cd_senha" id="senhaid" placeholder="****** " >
+          </div>
+          
+          <div>
+            <h6 class="modal-title textmodal">Confirmar Senha</h6>
+            <div class="col-sm-12 ">
+            <input type="confirmarsenha" class="form-control" 
+            name="cd_senha" id="senhaid" placeholder="****** " >
+          </div>
+          <p></p>
+
+          
+        </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Fechar</button>
+          
+          <button type="button" class="btn btn-outline-success">Cadastrar</button>
+
+        </div>
+
+
+
+      </div>
+
+    </div>
+
+  </div>
