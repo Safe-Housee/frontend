@@ -17,62 +17,62 @@
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
-  }
+}
 
 
 
-  .control {
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    
-  }
-  .control img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    filter: blur(25px);
-  }
+.control {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  
+}
+.control img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  filter: blur(25px);
+}
   
 
-  .fotoperfil {
-    width: 30%;
-    height: 30%;
-    border-radius: 150px;
-    text-align: center;
-    background: url("/assets/img/vegeta.jpg");
-    color: #fff;
-    margin: auto;
-    position: absolute;
-    top: 20%;
-    bottom: 70%;
-    left: 0%;
-    right: 60%;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
-  }
+.fotoperfil {
+  width: 30%;
+  height: 30%;
+  border-radius: 150px;
+  text-align: center;
+  background: url("/assets/img/vegeta.jpg");
+  color: #fff;
+  margin: auto;
+  position: absolute;
+  top: 20%;
+  bottom: 70%;
+  left: 0%;
+  right: 60%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
 
-  div.quadrado {
-    width:175%;
-    height:95%;
-    border: 0; /* As 4 bordas sólidas com 25px de espessura */
-    border-color:#fff; /* cores: topo, direita, inferior, esquerda */
-    margin: auto;
-    position: absolute;
-    top: 20%;
-    bottom: 21%;
-    left: 115%;
-    right:0%;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
- }
+div.quadrado {
+  width:175%;
+  height:95%;
+  border: 0; /* As 4 bordas sólidas com 25px de espessura */
+  border-color:#fff; /* cores: topo, direita, inferior, esquerda */
+  margin: auto;
+  position: absolute;
+  top: 20%;
+  bottom: 21%;
+  left: 115%;
+  right:0%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
 
- .text {
+.text {
   font-family: Arial, Helvetica, sans-serif;
   font-size: medium;
   text-align: justify;
@@ -91,7 +91,6 @@
   bottom: 0%;
   left: 0%;
   right: 8%;
-
 }
 
 .textnome {
@@ -99,7 +98,6 @@
   font-size: medium;
   text-align: justify;
   margin: 10px 0px;
-
 }
 
 
@@ -125,10 +123,7 @@ div.email {
   font-size: medium;
   text-align: justify;
   margin: 10px 0px;
-
 }
-
-
 
 div.telefone {
   width:240%;
@@ -152,7 +147,6 @@ div.telefone {
   font-size: medium;
   text-align: justify;
   margin: 10px 0px;
-
 }
 
 
@@ -183,7 +177,6 @@ div.honra {
 
 
 .button1 {
- 
   font-size: 12px;
   border: none;
   color: white;
@@ -200,15 +193,9 @@ div.honra {
   left: 120%;
   justify-content: center;
   align-items: center;
-  
   font-size: medium;
- 
 }
 
-
-
 .textmodal {
-  
   margin: 0 15px;
-
 }

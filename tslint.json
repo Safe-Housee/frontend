@@ -147,6 +147,13 @@
       "element",
       "app",
       "kebab-case"
+    ],
+    "@typescript-eslint/naming-convention": [
+      "error",
+      {
+        "selector": "variable",
+        "format": ["snake_case"]
+      }
     ]
   }
 }

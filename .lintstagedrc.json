@@ -1,0 +1,6 @@
+{
+    "*.js": [
+        "ng lint --fix",
+        "npm run test:terminal"
+    ]
+}
