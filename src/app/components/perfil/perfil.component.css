@@ -1,4 +1,4 @@
-.superior2_texto {
+.fundo {
     width: 55%;
     height: 100%;
     border-radius: 2px;
@@ -7,7 +7,6 @@
     font-size: 30px;
     color: #fff;
     margin: auto;
-    
     position: absolute;
     top: 20%;
     bottom: 10%;
@@ -19,29 +18,41 @@
     -o-background-size: cover;
 }
 
-
-
-.control {
+.img-fluid {
   position: relative;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  
-}
-.control img {
-  position: absolute;
-  top: 0;
-  left: 0;
   filter: blur(25px);
 }
-  
+
+.profilePicture {
+  width: 50%;
+  height: 50%;
+  margin-top: 22px;
+  margin-left: 30px;
+}
+
+#container-foto {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+mat-list-item {
+  border: 1px solid #ffff;
+  width: 89% !important;
+}
+
+#updateProfileBtn {
+  width: 200px;
+}
 
 .fotoperfil {
   width: 30%;
   height: 30%;
   border-radius: 150px;
   text-align: center;
-  background: url("/assets/img/vegeta.jpg");
   color: #fff;
   margin: auto;
   position: absolute;
@@ -77,8 +88,14 @@ div.quadrado {
   font-size: medium;
   text-align: justify;
   margin: 20px 40px;
-
+  width: 50%;
 }
+
+
+
+input {
+  min-width:400px;
+} 
 
 .nome {
   text-align: justify;

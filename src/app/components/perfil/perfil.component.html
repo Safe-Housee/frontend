@@ -1,41 +1,25 @@
 
-<div class="control">
-    <img class="img-fluid"src="/assets/img/florian.jpg" />
+<main class="control">
+    <img class="img-fluid" src="/assets/img/florian.jpg" />
 
-    <div class="superior2_texto">
-        <div class="fotoperfil">
-
-            <div class="quadrado">
-                <p class="text"> Foto de Perfil </p>
-                <p class="text"> Querido usuário fique ciente que sua foto de perfil será vista por inúmeras pessoas.
-                    caso a sua foto fira as diretrizes do site, sua conta poderá ser banida
-                </p>
-            </div>
-
-            <div class="col-sm-12 nome">
-                <input type="text" class="form-control" style="min-width:400px;"
-                name="nome" id="nome" placeholder="Matheus Lopes " >
-            </div>
-
-            <div class="col-sm-12 email">
-                <input type="text" class="form-control" style="min-width:400px;"
-                name="email" id="email" placeholder="matheussan@hotmail.com" >
-            </div>
-
-            <div class="col-sm-12 telefone">
-                <input type="text" class="form-control" style="min-width:400px;"
-                name="telefone" id="telefone" placeholder="(55)13-99845122" >
-            </div>
-
-            <div class=" col-sm-12 honra">
-                <input type="text" class="form-control" style="min-width:400px;"
-                name="honra" id="honra" placeholder="Honra aqui" >
-            </div>
-
-            <button type="button" class="btn btn-success button1" data-toggle="modal" data-target="#siteModal">Alterar Perfil</button>
-        </div>
+    <div class="fundo">
+      <div id="container-foto">
+          <img class="profilePicture" src="http://s2.glbimg.com/k9S_nEXQns81MzLlZO61JyCwqRM=/0x0:694x363/695x364/s.glbimg.com/po/tt2/f/original/2015/07/01/snapchat-flashy-features.jpg"  />
+        <p class="text" >
+          Querido usuário fique ciente que sua foto de perfil será vista por inúmeras pessoas.
+          caso a sua foto fira as diretrizes do site, sua conta poderá ser banida.
+        </p>
+      </div>
+      
+      <mat-list>
+        <mat-list-item class="text"> {{ usuario.nm_usuario }} </mat-list-item>
+        <mat-list-item class="text"> {{ usuario.ds_email }} </mat-list-item>
+        <mat-list-item class="text"> {{ usuario.ds_telefone }} </mat-list-item>
+        <mat-list-item class="text"> {{ usuario.honra.nm_honra }} </mat-list-item>
+      </mat-list>
+      <button mat-raised-button color="primary" style="width: 200px;" class="text">Alterar Perfil</button>
     </div>
-</div>
+</main>
 
  <!-- Modal -->
 
