@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,7 +18,6 @@ import { LayoutComponent } from './layout/layout.component';
 import { MainComponent } from './main/main.component';
 import { DoacaoComponent } from './pages/doacao/doacao.component';
 import { SalaComponent } from './pages/sala/sala.component';
-import { PerfilComponent } from './components/perfil/perfil.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +29,6 @@ import { PerfilComponent } from './components/perfil/perfil.component';
     MainComponent,
     DoacaoComponent,
     SalaComponent,
-    PerfilComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +40,8 @@ import { PerfilComponent } from './components/perfil/perfil.component';
     //Materials imports
     MatGridListModule,
     MatListModule,
-    MatButtonModule
+    MatButtonModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
