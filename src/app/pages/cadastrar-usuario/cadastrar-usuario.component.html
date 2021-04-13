@@ -1,16 +1,16 @@
 <main>
     <img id="img-fluid" src="/assets/img/florian.jpg" />
-    <div id="fundo">
+    <mat-card id="fundo">
         <section id="fotoUsuario" >
             <div id="imageUser">
                 <img style="width: 50%;" src="https://i.pinimg.com/564x/b5/dc/a9/b5dca9fac1361023498d6cb66e4d8b13.jpg" alt="Adicione a sua foto de perfil">
             </div>
             <div id="aviso">
-                <h3 id="titleImage">
+                <mat-card-subtitle id="titleImage">
                     <strong>
                         Escolha a sua foto de perfil
                     </strong>
-                </h3>
+                </mat-card-subtitle>
                 <p id="alertImage" class="text">
                     Esteja ciente de que a sua foto de perfil será vista por inúmeras pessoas. <br/>
                     Uma foto que contenha qualquer tipo conteudo racista/sexista/xenofobico fara a sua conta ser bánida.
@@ -30,17 +30,25 @@
 
             <mat-form-field appearance="legacy" id="emailConfirmationInput" class="input">
                 <mat-label>Confirme o seu e-mail</mat-label>
-                <input matInput placeholder="Confirme o seu e-mail" formControlName="ds_emailConfirmation">
+                <input matInput placeholder="Confirme o seu e-mail" (change)="checkEqual('email')" formControlName="ds_emailConfirmation">
             </mat-form-field>
 
             <mat-form-field appearance="legacy" id="senhaInput" class="input">
                 <mat-label>Senha</mat-label>
-                <input matInput placeholder="Digite a sua senha" formControlName="cd_senha">
+                <input matInput placeholder="Digite a sua senha" formControlName="cd_senha"
+                    [type]="hide ? 'password' : 'text'">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                    <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+                </button>
             </mat-form-field>
 
             <mat-form-field appearance="legacy" id="senhaConfirmationlInput" class="input">
                 <mat-label>Confirme a sua senha</mat-label>
-                <input matInput placeholder="Confirme a sua senha" formControlName="cd_senhaConfirmation">
+                <input matInput placeholder="Confirme a sua senha" (change)="checkEqual('senha')" formControlName="cd_senhaConfirmation"
+                    [type]="hide ? 'password' : 'text'">
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                        <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+                    </button>
             </mat-form-field>
 
             <mat-form-field appearance="legacy" id="telefoneInput" class="input">
@@ -54,11 +62,18 @@
                 <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                 <mat-datepicker #picker></mat-datepicker>
             </mat-form-field>
-
-           
         </form>
-        <footer>
-            <button mat-raised-button color="accent" (click)="submit()" [disabled]="canCreateUser()" >Cadastrar!</button>
-        </footer>
-    </div>
+
+        <mat-card-footer>
+            <button mat-raised-button id="createBtn" color="accent" (click)="submit()" [disabled]="canCreateUser()" >Cadastrar!</button>
+            <br />
+            <span *ngIf="showEmailNotEqualMessage">
+                Os emails não são iguais!
+            </span>
+            <br />
+            <span *ngIf="showSenhaNotEqualMessage">
+                As senhas não são iguais!
+            </span>
+        </mat-card-footer>
+    </mat-card>
 </main>

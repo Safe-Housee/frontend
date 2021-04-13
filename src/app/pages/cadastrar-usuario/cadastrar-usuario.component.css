@@ -1,29 +1,27 @@
 #img-fluid {
     position: relative;
-    width: 100vw;
-    height: 100vh;
+    width: 99vw;
+    height: 99vh;
     overflow: hidden;
     filter: blur(25px);
 }
 
 #fundo {
-    padding-top: 20px;
+    padding-top: 57px;
     width: 55vw;
-    height: 100%;
+    height: 98vh;
     border-radius: 2px;
     text-align: center;
     background-color: #342446;
     color: #fff;
     margin: auto;
     position: absolute;
-    top: 20%;
+    top: 12%;
     bottom: 10%;
     left: 0%;
     right: 0%;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
+    display: block;
     background-size: cover;
-    -o-background-size: cover;
 }
 
 .text {
@@ -52,6 +50,18 @@
 
 #titleImage {
     text-align: -webkit-auto;
+}
+
+form {
+    height: 32%;
+    display: grid ;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 70px 70px 70px 70px;
+}
+
+#createBtn {
+    margin-top: 12vh;
+    margin-bottom: 0px;
 }
 
 footer {
