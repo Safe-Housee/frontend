@@ -1,0 +1,64 @@
+<main>
+    <img id="img-fluid" src="/assets/img/florian.jpg" />
+    <div id="fundo">
+        <section id="fotoUsuario" >
+            <div id="imageUser">
+                <img style="width: 50%;" src="https://i.pinimg.com/564x/b5/dc/a9/b5dca9fac1361023498d6cb66e4d8b13.jpg" alt="Adicione a sua foto de perfil">
+            </div>
+            <div id="aviso">
+                <h3 id="titleImage">
+                    <strong>
+                        Escolha a sua foto de perfil
+                    </strong>
+                </h3>
+                <p id="alertImage" class="text">
+                    Esteja ciente de que a sua foto de perfil será vista por inúmeras pessoas. <br/>
+                    Uma foto que contenha qualquer tipo conteudo racista/sexista/xenofobico fara a sua conta ser bánida.
+                </p>
+            </div>
+        </section>
+        <form [formGroup]="criarUsuario">
+            <mat-form-field appearance="legacy" id="nameInput" class="input">
+                <mat-label>Nome</mat-label>
+                <input matInput placeholder="Digite o seu nome" formControlName="nm_usuario">
+            </mat-form-field>
+
+            <mat-form-field appearance="legacy" id="emailInput" class="input">
+                <mat-label>E-mail</mat-label>
+                <input matInput placeholder="Digite o seu email" formControlName="ds_email">
+            </mat-form-field>
+
+            <mat-form-field appearance="legacy" id="emailConfirmationInput" class="input">
+                <mat-label>Confirme o seu e-mail</mat-label>
+                <input matInput placeholder="Confirme o seu e-mail" formControlName="ds_emailConfirmation">
+            </mat-form-field>
+
+            <mat-form-field appearance="legacy" id="senhaInput" class="input">
+                <mat-label>Senha</mat-label>
+                <input matInput placeholder="Digite a sua senha" formControlName="cd_senha">
+            </mat-form-field>
+
+            <mat-form-field appearance="legacy" id="senhaConfirmationlInput" class="input">
+                <mat-label>Confirme a sua senha</mat-label>
+                <input matInput placeholder="Confirme a sua senha" formControlName="cd_senhaConfirmation">
+            </mat-form-field>
+
+            <mat-form-field appearance="legacy" id="telefoneInput" class="input">
+                <mat-label>Telefone</mat-label>
+                <input matInput placeholder="Digite o telefone" formControlName="cd_telefone">
+            </mat-form-field>
+
+            <mat-form-field appearance="legacy" id="dataInput" class="input">
+                <mat-label>Data de nascimento</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="dt_nascimento">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+
+           
+        </form>
+        <footer>
+            <button mat-raised-button color="accent" (click)="submit()" [disabled]="canCreateUser()" >Cadastrar!</button>
+        </footer>
+    </div>
+</main>
