@@ -1,9 +1,15 @@
 <main>
     <img id="img-fluid" src="/assets/img/florian.jpg" />
     <mat-card id="fundo">
-        <section id="fotoUsuario" >
+        <section id="fotoUsuario">
             <div id="imageUser">
-                <img style="width: 50%;" src="https://i.pinimg.com/564x/b5/dc/a9/b5dca9fac1361023498d6cb66e4d8b13.jpg" alt="Adicione a sua foto de perfil">
+                <mat-card-subtitle>
+                    <strong>
+                        Escolha o arquivo da foto de perfil
+                    </strong>
+                </mat-card-subtitle>
+                <br />
+                <input type="file" name="profile" id="profile" (change)="handleFileInput($event.target.files)">
             </div>
             <div id="aviso">
                 <mat-card-subtitle id="titleImage">

@@ -7,10 +7,13 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./cadastrar-usuario.component.css']
 })
 export class CadastrarUsuarioComponent implements OnInit {
+  
   criarUsuario: FormGroup;
   hide = true;
   showSenhaNotEqualMessage = false;
   showEmailNotEqualMessage = false;
+  fileToUpload: File = null;
+
   constructor() { }
 
   ngOnInit(): void {
@@ -40,6 +43,10 @@ export class CadastrarUsuarioComponent implements OnInit {
       this.showEmailNotEqualMessage = !emailIsOk;
     }
   }
+
+  handleFileInput(files: FileList) {
+    this.fileToUpload = files.item(0);
+}
 
   submit() {
     // criar payload
