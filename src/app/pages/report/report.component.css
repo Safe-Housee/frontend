@@ -1,12 +1,97 @@
+#img-fluid {
+  position: relative;
+  width: 99vw;
+  height: 99vh;
+  overflow: hidden;
+  filter: blur(25px);
+}
 
-.control {
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    
-  }
-  .control img {
+mat-card {
+  height: 100%;
+}
+
+#fundo {
+  padding-top: 57px;
+  width: 55vw;
+  height: 98vh;
+  border-radius: 2px;
+  text-align: center;
+  background-color: #342446;
+  color: #fff;
+  margin: auto;
+  position: absolute;
+  top: 12%;
+  bottom: 10%;
+  left: 0%;
+  right: 0%;
+  display: block;
+  background-size: cover;
+}
+
+#quadrado {
+  padding: 36px;
+  width: 60%;
+  height: 25%;
+  border: 2px solid;
+  border-color: #fff;
+  margin: auto;
+  position: absolute;
+  top: 20%;
+  bottom: 65%;
+  left: 0%;
+  right: 0%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
+#divisao {
+  width: 85%;
+  height: 0%;
+  border: 1px solid;
+  border-color: #8b008b;
+  margin: auto;
+  position: absolute;
+  top: 40%;
+  bottom: 50%;
+  left: 0%;
+  right: 0%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
+.input {
+  float: left;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+form {
+  height: 32%;
+  display: flex;
+  flex-direction: column;
+}
+
+#form {
+  margin-top: 39vh;
+  display: flex;
+  flex-direction: column;
+}
+
+mat-footer {
+  display: flex; 
+  flex-direction: column;
+  align-items: center;
+}
+
+#createBtn {
+  margin-top: 20px;
+}
+
+/* .control img {
     position: absolute;
     top: 0;
     left: 0;
@@ -38,13 +123,13 @@
     text-align: center;
     margin: 30px 30px;
     
-  }
+  } 
 
   div.quadrado {
     width:60%;
     height:25%;
-    border: 2px solid; /* As 4 bordas sólidas com 25px de espessura */
-    border-color:#fff; /* cores: topo, direita, inferior, esquerda */
+    border: 2px solid; 
+    border-color:#fff; 
     margin: auto;
     position: absolute;
     top: 20%;
@@ -60,8 +145,8 @@
  div.divisao {
     width:65%;
     height:0%;
-    border: 1px solid; /* As 4 bordas sólidas com 25px de espessura */
-    border-color:#8b008b; /* cores: topo, direita, inferior, esquerda */
+    border: 1px solid; 
+    border-color:#8b008b; 
     margin: auto;
     position: absolute;
     top: 40%;
@@ -86,8 +171,8 @@
   div.quadradousuario {
     width:25%;
     height:5%;
-    border: 3px; /* As 4 bordas sólidas com 25px de espessura */
-    border-color:#fff; /* cores: topo, direita, inferior, esquerda */
+    border: 3px; 
+    border-color:#fff; 
     margin: auto;
     position: absolute;
     top: 55%;
@@ -127,8 +212,8 @@
   div.quadradoreport {
     width:25%;
     height:5%;
-    border: 3px; /* As 4 bordas sólidas com 25px de espessura */
-    border-color:#fff; /* cores: topo, direita, inferior, esquerda */
+    border: 3px;
+    border-color:#fff; 
     margin: auto;
     position: absolute;
     top: 35%;
@@ -159,8 +244,8 @@
 div.quadradoarquivodeprova {
   width:25%;
   height:5%;
-  border: 3px; /* As 4 bordas sólidas com 25px de espessura */
-  border-color:#fff; /* cores: topo, direita, inferior, esquerda */
+  border: 3px; 
+  border-color:#fff; 
   margin: auto;
   position: absolute;
   top: 68%;
@@ -175,7 +260,7 @@ div.quadradoarquivodeprova {
 
 
 .button1 {
-  background-color: #342446; /* Green */
+  background-color: #342446; 
   font-size: 12px;
   border: 1PX solid;
   color: white;
@@ -199,7 +284,7 @@ div.quadradoarquivodeprova {
 
 
 .button2 {
-  background-color: #342446; /* Green */
+  background-color: #342446; 
   font-size: 12px;
   border: 1PX solid;
   color: white;
@@ -223,7 +308,7 @@ div.quadradoarquivodeprova {
 
 
 .button3 {
-  background-color: #342446; /* Green */
+  background-color: #342446; 
   font-size: 12px;
   border: 1PX solid;
   color: white;
@@ -243,4 +328,4 @@ div.quadradoarquivodeprova {
   font-family: Arial, Helvetica, sans-serif;
   font-size: medium;
  
-}
+} */

@@ -14,7 +14,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
-
+import { MatDividerModule } from '@angular/material/divider';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -57,7 +57,8 @@ import { CadastrarUsuarioComponent } from './pages/cadastrar-usuario/cadastrar-u
     MatDatepickerModule,
     MatNativeDateModule,
     MatIconModule,
-    MatCardModule
+    MatCardModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent],

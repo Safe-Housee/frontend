@@ -46,7 +46,7 @@ export class CadastrarUsuarioComponent implements OnInit {
 
   handleFileInput(files: FileList) {
     this.fileToUpload = files.item(0);
-}
+  } 
 
   submit() {
     // criar payload
