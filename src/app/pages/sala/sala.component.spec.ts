@@ -6,6 +6,14 @@ describe('SalaComponent', () => {
   let component: SalaComponent;
   let fixture: ComponentFixture<SalaComponent>;
 
+  let btnshow = document.querySelector('button');
+  let result = document.querySelector('h1');
+
+  btnshow.addEventListener('click' , () => {
+    let checkbox = document.querySelector('input[type="checkbox"]:checked');
+    result.innerText = checkbox.parentElement.textContent;
+  })
+
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ SalaComponent ]

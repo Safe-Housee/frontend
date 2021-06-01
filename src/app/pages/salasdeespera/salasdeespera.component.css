@@ -241,4 +241,44 @@
   right: 0%;
 
 }
+.h2sala
+{
+  color:#fff;
+  width: 15%;
+  height: 10%;
+  position: absolute;
+  top: 15%;
+  bottom: 0%;
+  left: 22%;
+  right: 0%;
 
+
+}
+
+.h2nivel
+{
+  color:#fff;
+  width: 15%;
+  height: 5%;
+  position: absolute;
+  top: 21%;
+  bottom: 0%;
+  left: 19%;
+  right: 0%;
+
+
+}
+
+.h2jogadores
+{
+  color:#fff;
+  width: 15%;
+  height: 15%;
+  position: absolute;
+  top: 27%;
+  bottom: 0%;
+  left: 21%;
+  right: 0%;
+
+
+}

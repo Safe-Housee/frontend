@@ -26,6 +26,7 @@ import { MainComponent } from './main/main.component';
 import { DoacaoComponent } from './pages/doacao/doacao.component';
 import { SalaComponent } from './pages/sala/sala.component';
 import { CadastrarUsuarioComponent } from './pages/cadastrar-usuario/cadastrar-usuario.component';
+import { SalasdeesperaComponent } from './pages/salasdeespera/salasdeespera.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { CadastrarUsuarioComponent } from './pages/cadastrar-usuario/cadastrar-u
     DoacaoComponent,
     SalaComponent,
     CadastrarUsuarioComponent,
+    SalasdeesperaComponent,
   ],
   imports: [
     BrowserModule,

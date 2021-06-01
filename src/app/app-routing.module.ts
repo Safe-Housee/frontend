@@ -7,6 +7,7 @@ import { MainComponent } from './main/main.component';
 import { ReportComponent } from './pages/report/report.component';
 import { DoacaoComponent } from './pages/doacao/doacao.component';
 import { SalaComponent } from './pages/sala/sala.component';
+import { SalasdeesperaComponent } from './pages/salasdeespera/salasdeespera.component';
 import { CadastrarUsuarioComponent } from './pages/cadastrar-usuario/cadastrar-usuario.component';
 
 const routes: Routes = [
@@ -19,6 +20,7 @@ const routes: Routes = [
       { path: 'report', component: ReportComponent },
       { path: 'doacao', component: DoacaoComponent },
       { path: 'sala', component: SalaComponent },
+      { path: 'salasdeespera', component: SalasdeesperaComponent },
       { path: 'cadastro', component: CadastrarUsuarioComponent }
     ]
   }

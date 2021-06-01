@@ -6,49 +6,149 @@
   
   <div class="checkbox">
 
+  <div class="custom-checkbox">
+    <input id="checkbox-1" value="Tekken7" type="checkbox">
+    <label for="checkbox-1" class="text-white textjogo custom1">Tekken 7</label>
+  </div>
+
+  <div class="custom-checkbox">
+    <input id="checkbox-2" value="Sala Vazia" type="checkbox">
+    <label for="checkbox-2" class="text-white checkbox2 textjogo">Sala Vazia</label>
+  </div>
+
+  <div class="custom-checkbox">
+    <input id="checkbox-3" value="LOL" type="checkbox">
+    <label for="checkbox-3" class="text-white textjogo custom2">LOL</label>
+  </div>
+
+  <div class="custom-checkbox">
+    <input id="checkbox-4" value="CS-GO" type="checkbox">
+    <label for="checkbox-4" class="text-white custom3">CS-GO </label>
+  </div>
+
   
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark jogo" style="background-color: #342446;">
-     <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle text-white textjogo" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-     Mortal Kombat 11
-    </a>
-    <div class="dropdown-menu " style="background-color: #342446;" aria-labelledby="navbarDropdown">
-      <a class="dropdown-item text-white" href="#">League of legends</a>
-      <a class="dropdown-item text-white" href="#">Tekken 7</a>
-      <a class="dropdown-item text-white" href="#">CS:GO</a>
+
+</div>
+
+<form class="form-inline ">
+  <input class="form-control mr-sm-2 pesquisa" type="search" placeholder="Pesquisar" aria-label="Search">
+  <button class="btn btn-outline-success my-2 my-sm-0 pesquisabotao" type="submit">Pesquisar</button>
+</form>
+<form class="form-inline ">
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-outline-success my-2 my-sm-0 modalbotao" data-toggle="modal" data-target="#exampleModal">
+  Criar Sala
+</button>
+</form>
+
+<div class="table-responsive-sm table-hover table-dark tableconfig">
+  <table class="table">
+    <thead>
+      <tr class="table-success">
+        <th scope="col">#</th>
+        <th scope="col">Jogo</th>
+        <th scope="col">Nome da Sala</th>
+        <th scope="col">Nível</th>
+        <th scope="col">Limite</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="table-success">
+        <th scope="row">1</th>
+        <td [routerLink]="['report']">Tekken 7</td>
+        <td>Jogo 1</td>
+        <td>Iniciante</td>
+        <td>1/2</td>
+      </tr>
+      <tr class="table-success">
+        <th scope="row">2</th>
+        <td>CS-GO</td>
+        <td>CS GOOOO</td>
+        <td>Iniciante</td>
+        <td>5/8</td>
+      </tr>
+      <tr class="table-success">
+        <th scope="row">3</th>
+        <td>LOL</td>
+        <td>LOL2251</td>
+        <td>Moderado</td>
+        <td>5/10</td>
+      </tr>
+
+      <tr class="table-success">
+        <th scope="row">4</th>
+        <td>LOL</td>
+        <td>LOL5472</td>
+        <td>Moderado</td>
+        <td>7/10</td>
+      </tr>
+
+      <tr class="table-success">
+        <th scope="row">5</th>
+        <td>CS-GO</td>
+        <td>CS-GO5421</td>
+        <td>Avançado/td>
+        <td>4/8</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="exampleModalLabel">Criação de sala</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form class="nomedasala">
+        <label for="exampleFormControlSelect2">Selecione o Jogo</label>
+      </form>
+        <select class="form-control">
+          <option>LOL</option>
+          <option>CS-GO</option>
+          <option>TEKKEN 7</option>
+        </select>
+
+        <div class="form-group">
+          <form class="nomedasala">
+          <label >Nome da Sala</label>
+        </form>
+          <input type="password" class="form-control" id="Nomedasala" placeholder="Nome da Sala">
+        
+        </div>
+
+
+        <form class="nomedasala">
+        <label for="exampleFormControlSelect2">Nível</label>
+      </form>
+        <select class="form-control">
+          <option>Iniciante</option>
+          <option>Moderado</option>
+          <option>Avançado</option>
+        </select>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+        <button type="button" class="btn btn-primary">Criar Sala</button>
+      </div>
     </div>
-  </li>
-  </nav>
-
-  <div class="custom-checkbox">
-    <input id="checkbox-1" type="checkbox">
-    <label for="checkbox-1" class="text-white textjogo">Global</label>
   </div>
-
-  <div class="custom-checkbox">
-    <input id="checkbox-2" type="checkbox">
-    <label for="checkbox-2" class="text-white textjogo">Casual</label>
-  </div>
-
-  <div class="custom-checkbox">
-    <input id="checkbox-3" type="checkbox">
-    <label for="checkbox-3" class="text-white custom3">HeadSet </label>
-  </div>
-  
-
-
 </div>
-  
-<div class="quadradosalas">
-
-  
-
-
-  <form class="form-inline ">
-    <input class="form-control mr-sm-2 pesquisa" type="search" placeholder="Search" aria-label="Search">
-    <button class="btn btn-outline-success my-2 my-sm-0 pesquisabotao" type="submit">Search</button>
-  </form>
 
 
 
-</div>
