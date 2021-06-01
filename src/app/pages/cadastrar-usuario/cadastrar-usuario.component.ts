@@ -49,7 +49,6 @@ export class CadastrarUsuarioComponent implements OnInit {
 }
 
   submit() {
-    // criar payload
-    // chamar service
+    console.log(this.criarUsuario.value)
   }
 }
