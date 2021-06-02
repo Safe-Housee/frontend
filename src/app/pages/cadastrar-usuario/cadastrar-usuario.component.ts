@@ -57,7 +57,9 @@ export class CadastrarUsuarioComponent implements OnInit {
 
 
   openSnackBar(message: string, action = null) {
-    this._snackBar.open(message, action);
+    this._snackBar.open(message, action, {
+      duration: 2000
+    });
   }
 
   submit() {
