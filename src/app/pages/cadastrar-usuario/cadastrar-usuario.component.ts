@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
+import { UsuarioServiceService } from 'src/app/services/usuario/usuario-service.service';
+
 
 @Component({
   selector: 'app-cadastrar-usuario',
@@ -14,7 +18,10 @@ export class CadastrarUsuarioComponent implements OnInit {
   showEmailNotEqualMessage = false;
   fileToUpload: File = null;
 
-  constructor() { }
+  constructor(
+    private userService: UsuarioServiceService, 
+    private _snackBar: MatSnackBar,
+    private router: Router ) { }
 
   ngOnInit(): void {
     this.criarUsuario = new FormGroup({
@@ -46,9 +53,20 @@ export class CadastrarUsuarioComponent implements OnInit {
 
   handleFileInput(files: FileList) {
     this.fileToUpload = files.item(0);
-}
+  }
+
+
+  openSnackBar(message: string, action = null) {
+    this._snackBar.open(message, action);
+  }
 
   submit() {
-    console.log(this.criarUsuario.value)
+    this.userService.criarUsuario(this.criarUsuario.value)
+    .subscribe(() => {
+      this.openSnackBar('Usuário cadastrado', 'Ir para o inicio');
+      setTimeout(() => {
+        this.router.navigate(['/main']);
+      }, 2000);
+    })
   }
 }

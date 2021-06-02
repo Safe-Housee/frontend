@@ -27,6 +27,8 @@ import { DoacaoComponent } from './pages/doacao/doacao.component';
 import { SalaComponent } from './pages/sala/sala.component';
 import { CadastrarUsuarioComponent } from './pages/cadastrar-usuario/cadastrar-usuario.component';
 import { SalasdeesperaComponent } from './pages/salasdeespera/salasdeespera.component';
+import { HttpClientModule } from '@angular/common/http';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -44,6 +46,7 @@ import { SalasdeesperaComponent } from './pages/salasdeespera/salasdeespera.comp
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     RouterModule,
     FormsModule,
     ReactiveFormsModule,
@@ -59,7 +62,8 @@ import { SalasdeesperaComponent } from './pages/salasdeespera/salasdeespera.comp
     MatDatepickerModule,
     MatNativeDateModule,
     MatIconModule,
-    MatCardModule
+    MatCardModule,
+    MatSnackBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
