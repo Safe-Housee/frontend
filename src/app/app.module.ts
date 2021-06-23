@@ -30,6 +30,7 @@ import { CadastrarUsuarioComponent } from './pages/cadastrar-usuario/cadastrar-u
 import { SalasdeesperaComponent } from './pages/salasdeespera/salasdeespera.component';
 import { Error404Component } from './pages/error404/error404.component';
 import { LoginComponent } from './pages/login/login.component';
+import { AuthGuard } from './services/auth/auth.guard';
 
 @NgModule({
   declarations: [
@@ -68,7 +69,7 @@ import { LoginComponent } from './pages/login/login.component';
     MatCardModule,
     MatSnackBarModule,
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

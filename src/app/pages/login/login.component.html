@@ -22,12 +22,12 @@
         <form [formGroup]="login">
             <mat-form-field appearance="standard" id="emailInput" class="input">
                 <mat-label>E-mail</mat-label>
-                <input matInput placeholder="Digite o seu email" formControlName="ds_email">
+                <input matInput placeholder="Digite o seu email" formControlName="email">
             </mat-form-field>
 
             <mat-form-field appearance="standard" id="senhaInput" class="input">
                 <mat-label>Senha</mat-label>
-                <input matInput placeholder="Digite a sua senha" formControlName="cd_senha"
+                <input matInput placeholder="Digite a sua senha" formControlName="senha"
                     [type]="hide ? 'password' : 'text'">
                 <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                     <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
@@ -35,7 +35,7 @@
             </mat-form-field>
         </form>
         <mat-card-footer>
-            <button mat-raised-button id="createBtn" color="accent" (click)="submit()" [disabled]="login.valid" >Entrar</button>
+            <button mat-raised-button id="createBtn" color="accent" (click)="submit()" [disabled]="!login.valid" >Entrar</button>
         </mat-card-footer>
     </mat-card>
 </main>

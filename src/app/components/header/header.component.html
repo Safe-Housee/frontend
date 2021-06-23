@@ -1,66 +1,65 @@
 <header>
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark" style="background-color: #342446;">
+    <a class="navbar-brand" [routerLink]="['main']"><img src="assets/img/H.png" alt="logo" width="30" height="35"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark" style="background-color: #342446;">
-        <a class="navbar-brand" [routerLink]="['main']"><img src="assets/img/H.png" alt="logo" width="30" height="35" ></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" [routerLink]="['main']">Home <span class="sr-only">(current)</span></a>
-            </li>
-    
-    
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle"  href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Jogo
-              </a>
-              <div class="dropdown-menu" style="background-color: #342446;" aria-labelledby="navbarDropdown">
-          
-                <a class="dropdown-item text-white" href="#">Lista de Jogos</a>
-                <a class="dropdown-item text-white" [routerLink]="['sala']">Jogar</a>
-              </div>
-            </li>
-    
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Mais
-              </a>
-              <div class="dropdown-menu" style="background-color: #342446;" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item text-white" [routerLink]="['doacao']">Doações</a>
-                <a class="dropdown-item text-white" [routerLink]="['report']">Denuncias</a>
-               
-              </div>
-            </li>
-          </ul>
-        </div>
-    
-        <div class="nav navbar-nav navbar-right" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-           
-              <a class="nav-link" href="#"role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Perfil <span class="sr-only">(current)</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-    
-          <div class="nav navbar-nav navbar-right " id="navbarSupportedContent" id="perfil">
-            <ul class="navbar-nav mr-auto">
-              <li class="nav navbar-nav navbar-right ">
-                <a class="perfil" [routerLink]="['perfil']">
-                  <img src="assets/img/Grupo_10.png" alt="logo" width="30" height="35">
-                </a>
-              </li>
-            </ul>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+
+        <li *ngIf="!isLogged()" class="nav-item active">
+          <a class="nav-link" [routerLink]="['login']">Login <span class="sr-only">(current)</span></a>
+        </li>
+
+        <li *ngIf="isLogged()" class="nav-item active">
+          <a class="nav-link" [routerLink]="['main']">Home <span class="sr-only">(current)</span></a>
+        </li>
+
+        <li *ngIf="isLogged()" class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Jogo
+          </a>
+          <div class="dropdown-menu" style="background-color: #342446;" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item text-white" href="#">Lista de Jogos</a>
+            <a class="dropdown-item text-white" [routerLink]="['sala']">Jogar</a>
           </div>
-    
-    
+        </li>
 
-    
-        
-      </nav>
-    </header>
+        <li *ngIf="isLogged()" class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Mais
+          </a>
+          <div class="dropdown-menu" style="background-color: #342446;" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item text-white" [routerLink]="['doacao']">Doações</a>
+            <a class="dropdown-item text-white" [routerLink]="['report']">Denuncias</a>
+          </div>
+        </li>
+
+      </ul>
+    </div>
+
+    <div class="nav navbar-nav navbar-right" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Perfil <span class="sr-only">(current)</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="nav navbar-nav navbar-right " id="navbarSupportedContent" id="perfil">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav navbar-nav navbar-right ">
+          <a class="perfil" [routerLink]="['perfil']">
+            <img src="assets/img/Grupo_10.png" alt="logo" width="30" height="35">
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>

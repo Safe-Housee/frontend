@@ -25,7 +25,7 @@ const routes: Routes = [
       { path: 'sala', component: SalaComponent, canActivate: [AuthGuard] },
       { path: 'salasdeespera', component: SalasdeesperaComponent, canActivate: [AuthGuard] },
       { path: 'cadastro', component: CadastrarUsuarioComponent },
-      { path: 'login', component: LoginComponent},
+      { path: 'login', component: LoginComponent },
 
       {
         path: '**', component: Error404Component

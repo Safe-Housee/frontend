@@ -46,4 +46,8 @@ export class BackendConfigService {
   public static criarUsuario() {
     return `${this.backendUrl()}/usuarios`;
   }
+
+  public static login() {
+    return `${this.backendUrl()}/login`;
+  }
 }
