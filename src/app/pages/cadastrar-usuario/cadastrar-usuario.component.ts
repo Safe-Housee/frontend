@@ -21,7 +21,7 @@ export class CadastrarUsuarioComponent implements OnInit {
   constructor(
     private userService: UsuarioServiceService, 
     private _snackBar: MatSnackBar,
-    private router: Router ) { }
+    private router: Router) { }
 
   ngOnInit(): void {
     this.criarUsuario = new FormGroup({

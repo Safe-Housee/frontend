@@ -1,0 +1,41 @@
+<!-- 
+    Base    
+<router-outlet></router-outlet>
+
+<main class="control">
+    <img class="img-fluid"src="/assets/img/florian.jpg" />
+    <div class="superior2_texto">
+
+    </div>
+</main>-->
+
+<router-outlet></router-outlet>
+
+<main class="control">
+    <img class="img-fluid"src="/assets/img/florian.jpg" />
+    <mat-card id="fundo">
+        <mat-card-subtitle>
+            <strong>
+                Acesse a Safe House
+            </strong>
+        </mat-card-subtitle>
+        <form [formGroup]="login">
+            <mat-form-field appearance="standard" id="emailInput" class="input">
+                <mat-label>E-mail</mat-label>
+                <input matInput placeholder="Digite o seu email" formControlName="email">
+            </mat-form-field>
+
+            <mat-form-field appearance="standard" id="senhaInput" class="input">
+                <mat-label>Senha</mat-label>
+                <input matInput placeholder="Digite a sua senha" formControlName="senha"
+                    [type]="hide ? 'password' : 'text'">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                    <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+                </button>
+            </mat-form-field>
+        </form>
+        <mat-card-footer>
+            <button mat-raised-button id="createBtn" color="accent" (click)="submit()" [disabled]="!login.valid" >Entrar</button>
+        </mat-card-footer>
+    </mat-card>
+</main>
