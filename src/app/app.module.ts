@@ -31,6 +31,14 @@ import { SalasdeesperaComponent } from './pages/salasdeespera/salasdeespera.comp
 import { Error404Component } from './pages/error404/error404.component';
 import { LoginComponent } from './pages/login/login.component';
 import { AuthGuard } from './services/auth/auth.guard';
+import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
+import { ChatComponent } from './components/chat/chat.component';
+
+
+
+const config: SocketIoConfig = { url: 'http://localhost:3333', options: {
+  path: '/chat',
+} };
 
 @NgModule({
   declarations: [
@@ -46,6 +54,7 @@ import { AuthGuard } from './services/auth/auth.guard';
     SalasdeesperaComponent,
     Error404Component,
     LoginComponent,
+    ChatComponent,
   ],
   imports: [
     BrowserModule,
@@ -68,6 +77,7 @@ import { AuthGuard } from './services/auth/auth.guard';
     MatIconModule,
     MatCardModule,
     MatSnackBarModule,
+    SocketIoModule.forRoot(config)
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent],
