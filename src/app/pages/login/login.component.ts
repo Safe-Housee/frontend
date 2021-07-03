@@ -12,7 +12,10 @@ import { UsuarioServiceService } from 'src/app/services/usuario/usuario-service.
 export class LoginComponent implements OnInit {
   login: any;
   hide = true;
-  constructor(private usuarioService: UsuarioServiceService, private _snackBar: MatSnackBar, private router: Router) { 
+  constructor(
+    private usuarioService: UsuarioServiceService, 
+    private _snackBar: MatSnackBar, 
+    private router: Router) { 
     
   }
 
@@ -21,7 +24,6 @@ export class LoginComponent implements OnInit {
       email: new FormControl(null, [Validators.required, Validators.email]),
       senha: new FormControl(null, [Validators.required])
     });
-    
   }
 
   submit() {
@@ -31,6 +33,7 @@ export class LoginComponent implements OnInit {
     }
     this.usuarioService.login(payload).subscribe(res => {
       localStorage['token'] = String(res.token);
+      localStorage['cdUsuario'] = String(res.cdUsuario);
       this.openSnackBar('Logado com sucesso', 'Ir para o inicio');
       setTimeout(() => {
         this.router.navigate(['/main']);

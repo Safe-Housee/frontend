@@ -22,6 +22,7 @@ export class ChatComponent implements OnInit {
     }
 
   }
+  
   getMessage() {
     return this.socket.fromEvent('connection').pipe(map((data) => data));
   }

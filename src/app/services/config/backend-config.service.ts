@@ -22,6 +22,8 @@ export class BackendConfigService {
   }
 
   public static token() {
+    // const token = localStorage['token'] ? localStorage['token'] : 'eyJhbGciOiJIUzI1NiJ9.MjM3.Rt13VkXeGkkNM1OMCtpKHhz85DWPAEumD03dDoiY2po'
+    // return token;
     return 'eyJhbGciOiJIUzI1NiJ9.MjM3.Rt13VkXeGkkNM1OMCtpKHhz85DWPAEumD03dDoiY2po';
   }
 
@@ -49,5 +51,12 @@ export class BackendConfigService {
 
   public static login() {
     return `${this.backendUrl()}/login`;
+  }
+
+  public static partidas() {
+    return `${this.backendUrl()}/partidas`
+  }
+  public static partidasPorJogo(cdJogo) {
+    return `${this.backendUrl()}/partidas?gameId=${cdJogo}`
   }
 }
