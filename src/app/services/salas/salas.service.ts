@@ -16,8 +16,8 @@ export class SalasService {
 
   constructor(private http: HttpClient) { }
 
-  getSalas(cdJogo: number = 1) {
-    return this.http.get(BackendConfigService.partidasPorJogo(cdJogo), BackendConfigService.httpOptions())
+  getSalas() {
+    return this.http.get(BackendConfigService.partidasPorJogo(), BackendConfigService.httpOptions())
     .pipe(catchError(BackendConfigService.handleError));
   }
 

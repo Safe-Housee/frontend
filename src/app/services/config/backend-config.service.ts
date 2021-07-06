@@ -56,7 +56,7 @@ export class BackendConfigService {
   public static partidas() {
     return `${this.backendUrl()}/partidas`
   }
-  public static partidasPorJogo(cdJogo) {
-    return `${this.backendUrl()}/partidas?gameId=${cdJogo}`
+  public static partidasPorJogo() {
+    return `${this.backendUrl()}/partidas`
   }
 }
