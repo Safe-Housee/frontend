@@ -1,29 +1,94 @@
-.color{
-    width: 20%;
-    height: 25%;
-    background-color: #342446;
-    text-align: justify;
-}
 
-.quadradocheckbox{
+.background{
 
+  background-color: #342446;
   width: 100%;
   height: 100%;
-  border: solid 1px;
-  text-align: center;
-  background-color:#342446;
-  margin: auto;
-  position: absolute;
-  top: 0%;
-  bottom: 0%;
-  left: 0%;
-  right: 0%;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  -o-background-size: cover;
 
 }
+
+.header{
+
+  
+  width: 100vw;
+  height: 15vh;
+  display: flex; /* seguir dentro da div*/
+  flex-direction: row; /* direção de uma linha vai ficar na mesma direção*/
+  flex-wrap: wrap; /* força ficar na mesma direção*/ 
+  justify-content: space-between; /* coloca espaço entre todos os items que estão dentro da div na horizontal*/ 
+  margin-top: 55px;
+}
+
+.quadradotabela{
+ 
+  width: 100vw;
+  height: 55vh;
+  display: flex; /* seguir dentro da div*/
+  flex-direction: row; /* direção de uma linha vai ficar na mesma direção*/
+  flex-wrap: wrap; /* força ficar na mesma direção*/ 
+  justify-content: space-between; /* coloca espaço entre todos os items que estão dentro da div na horizontal*/ 
+  margin-top: 60px;
+}
+.tabela{
+
+  width: 50%;
+  height: 50%;
+  margin: 0 auto;
+
+}
+
+.quadradocriarsala{
+  
+  width: 100vw;
+  height: 10vh;
+  justify-content: flex-end;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-right: 30px;
+  
+}
+
+.buttoncriarsala{
+  height: 40px;
+  margin-left: 15px;
+}
+
+.listcheckbox{
+  
+  
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;/* direção de uma linha vai ficar na mesma direção no caso na mesma coluna*/
+  flex-wrap: wrap;
+  padding: 10px;
+
+}
+
+.pesquisar{
+  
+  padding-top: 10px;
+  justify-content: flex-end;
+  padding-right: 30px;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+ 
+
+
+}
+.imput{
+  width: 30%;
+
+}
+.buttonpesquisar{
+  height: 40px;
+  margin-left: 15px;
+}
+
 
 .checkbox{
     width: 20%;
@@ -42,61 +107,6 @@
     -o-background-size: cover;
   }
 
-  
-.checkbox2{
-  width: 100%;
-  height: 25%;
-  border: 0px;
-  text-align: center;
-  color:#342446;
-  position: absolute;
-  top: 11%;
-  bottom: 0%;
-  left: 50%;
-  right: 120%;
-
-}
-
-
-
-  .global{
-    width: 20%;
-    height: 20%;
-    border: solid 1px;
-    text-align: center;
-    color:#342446;
-    margin: auto;
-    position: absolute;
-    top: 0%;
-    bottom: 40%;
-    left: 0%;
-    right: 150%;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
-  }
-
-
-  .jogo{
-    width: 100%;
-    height: 50%;
-    
-    text-align: center;
-    background-color:#342446;
-    margin: auto;
-    position: absolute;
-    top: 50%;
-    bottom: 200%;
-    left: 0%;
-    right: 150%;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
-  }
-
-  
 
   .custom-checkbox input,
   .custom-radio input{
@@ -105,9 +115,9 @@
   
   .custom-checkbox input + label:before {
     content: '';
-    width: 30px;
-    height: 30px;
-    border-radius: 4px;
+    width: 20px;
+    height: 20px;
+    border-radius: 2px;
     background-color: purple;
     border: 1px solid gray;
     display: inline-block;
@@ -116,26 +126,6 @@
     margin-right: 9px;
     margin-bottom: 4px;
   }
-  .custom1{
-
-    margin-right: -25px;
-    margin-bottom: 6px;
-  
-  }
-  .custom2{
-
-    margin-right: 4px;
-    margin-bottom: 6px;
-  
-  }
-  .custom3{
-
-    margin-right: -15px;
-    margin-bottom: 4px;
-
-  }
-
-
 
   
   .custom-checkbox input:checked + label:before {
@@ -147,98 +137,5 @@
   }
   
 
-  
 
-  .pesquisa
-  {
-  
-    position: absolute;
-    top: 20%;
-    bottom: 80%;
-    left: 60%;
-    right: 80%;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
-  
-  }
-  .pesquisabotao
-
-  {
-    width: 9%;
-    height: 6%;
-    position: absolute;
-    top: 20%;
-    bottom: 80%;
-    left: 80%;
-    right: 80%;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
-  
-  }
-
-  .modalbotao
-
-  {
-    width: 9%;
-    height: 6%;
-    position: absolute;
-    top: 85%;
-    bottom: 0%;
-    left: 81%;
-    right: 0%;
-    
-  
-  }
-
-  .nomedasala{
-    margin-top: 15px;
-    margin-left: 4px;
-    text-align: left;
-
-
-  }
-
-
-.tableconfig{
-
-  width: 50%;
-  height: 50%;
-  position: absolute;
-  top: 35%;
-  bottom: 0%;
-  left: 25%;
-  right: 0%;
-
-}
-
-
-.h1
-{
-
-  width: 10%;
-  height: 10%;
-  position: absolute;
-  top: 35%;
-  bottom: 0%;
-  left: 85%;
-  right: 0%;
-
-}
-
-.button
-{
-
-  width: 9%;
-  height: 9%;
-  position: absolute;
-  top: 35%;
-  bottom: 0%;
-  left: 50%;
-  right: 0%;
-
-}
 

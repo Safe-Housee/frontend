@@ -31,6 +31,7 @@ import { SalasdeesperaComponent } from './pages/salasdeespera/salasdeespera.comp
 import { Error404Component } from './pages/error404/error404.component';
 import { LoginComponent } from './pages/login/login.component';
 import { AuthGuard } from './services/auth/auth.guard';
+import { AcademyComponent } from './pages/academy/academy.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { AuthGuard } from './services/auth/auth.guard';
     SalasdeesperaComponent,
     Error404Component,
     LoginComponent,
+    AcademyComponent,
   ],
   imports: [
     BrowserModule,

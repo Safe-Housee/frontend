@@ -1,396 +1,44 @@
-.color{
-    width: 20%;
-    height: 25%;
-    background-color: #342446;
-    text-align: justify;
-}
+.background{
 
-.quadradocheckbox{
-
+  background-color: #342446;
   width: 100%;
   height: 100%;
-  border: solid 1px;
-  text-align: center;
-  background-color:#342446;
-  margin: auto;
-  position: absolute;
-  top: 0%;
-  bottom: 0%;
-  left: 0%;
-  right: 0%;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  -o-background-size: cover;
+
+}
+.listadeespera{
+  
+  width: 50vw;
+  height: 100vh;
+  display: flex; /* seguir dentro da div*/
+  flex-direction: row; /* direção de uma linha vai ficar na mesma direção*/
+  flex-wrap: wrap; /* força ficar na mesma direção*/ 
+  justify-content: space-between; /* coloca espaço entre todos os items que estão dentro da div na horizontal*/ 
+  
+}
+
+.placar{
+  margin-top: 61px;
+  margin-left: 30px;
+  width: 100vw;
+  height: 22vh;
 
 }
 
-.checkbox{
-    width: 20%;
-    height: 60%;
-    border: solid 1px;
-    text-align: center;
-    color:#342446;
-    position: absolute;
-    top: 15%;
-    bottom: 0%;
-    left: 0%;
-    right: 60%;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
-  }
-
+.tablee{
   
-.checkbox2{
-  width: 100%;
-  height: 25%;
-  border: 0px;
-  text-align: center;
-  color:#342446;
-  position: absolute;
-  top: 11%;
-  bottom: 0%;
-  left: 50%;
-  right: 120%;
+  width: 100vw;
+  height: 68vh;
+
 
 }
 
-
-
-  .global{
-    width: 20%;
-    height: 20%;
-    border: solid 1px;
-    text-align: center;
-    color:#342446;
-    margin: auto;
-    position: absolute;
-    top: 0%;
-    bottom: 40%;
-    left: 0%;
-    right: 150%;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
-  }
-
-
-  .jogo{
-    width: 100%;
-    height: 50%;
-    
-    text-align: center;
-    background-color:#342446;
-    margin: auto;
-    position: absolute;
-    top: 50%;
-    bottom: 200%;
-    left: 0%;
-    right: 150%;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
-  }
-
-  
-
-  .custom-checkbox input,
-  .custom-radio input{
-    display: none;
-  }
-  
-  .custom-checkbox input + label:before {
-    content: '';
-    width: 30px;
-    height: 30px;
-    border-radius: 4px;
-    background-color: purple;
-    border: 1px solid gray;
-    display: inline-block;
-    vertical-align: middle;
-    text-align:justify;
-    margin-right: 9px;
-    margin-bottom: 4px;
-  }
-  .custom1{
-
-    margin-right: -25px;
-    margin-bottom: 6px;
-  
-  }
-  .custom2{
-
-    margin-right: 4px;
-    margin-bottom: 6px;
-  
-  }
-  .custom3{
-
-    margin-right: -15px;
-    margin-bottom: 4px;
-
-  }
-
-
-
-  
-  .custom-checkbox input:checked + label:before {
-    background-image: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' width='25' height='25' viewBox='0 0 10 10'%3E%3Cg class='nc-icon-wrapper' stroke-width='1' fill='%23555555'%3E%3Cpath fill='none' stroke='%23FFFFFF' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='10' data-cap='butt' d='M2.83 4.72l1.58 1.58 2.83-2.83'/%3E%3C/g%3E%3C/svg%3E");
-    background-color: green;
-    background-position: center;
-    border: none;
-    padding: 1px;
-  }
-  
-
-  
-
-  .pesquisa
-  {
-  
-    position: absolute;
-    top: 20%;
-    bottom: 80%;
-    left: 60%;
-    right: 80%;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
-  
-  }
-  .pesquisabotao
-
-  {
-    width: 9%;
-    height: 6%;
-    position: absolute;
-    top: 20%;
-    bottom: 80%;
-    left: 80%;
-    right: 80%;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
-  
-  }
-
-  .modalbotao
-
-  {
-    width: 9%;
-    height: 6%;
-    position: absolute;
-    top: 87%;
-    bottom: 0%;
-    left: 48%;
-    right: 0%;
-    
-  
-  }
-
-  .nomedasala{
-    margin-top: 15px;
-    margin-left: 4px;
-    text-align: left;
-
-
-  }
-
-
-.tableconfig{
-
-  width: 50%;
-  height: 50%;
-  position: absolute;
-  top: 35%;
-  bottom: 0%;
-  left: 7%;
-  right: 0%;
-
+.tabela{
+  margin-left: 10px;
+  width: 45vw;
+  height: 55vh;
+  margin: 0 auto;
 }
 
-
-.h1
-{
-
-  width: 10%;
-  height: 10%;
-  position: absolute;
-  top: 35%;
-  bottom: 0%;
-  left: 85%;
-  right: 0%;
-
-}
-
-
-.h2sala
-{
+.h2{
   color:#fff;
-  width: 15%;
-  height: 10%;
-  position: absolute;
-  top: 15%;
-  bottom: 0%;
-  left: 4%;
-  right: 0%;
-
-
-}
-
-.h2nivel
-{
-  color:#fff;
-  width: 15%;
-  height: 5%;
-  position: absolute;
-  top: 21%;
-  bottom: 0%;
-  left: 1%;
-  right: 0%;
-
-
-}
-
-.h2jogadores
-{
-  color:#fff;
-  width: 15%;
-  height: 15%;
-  position: absolute;
-  top: 27%;
-  bottom: 0%;
-  left: 3%;
-  right: 0%;
-
-
-}
-
-.chatbody{
-  
-  
-  width: 30%;
-  height: 30%;
-  position: absolute;
-  top: 39%;
-  bottom: 0%;
-  left: 59%;
-  right: 0%;
-
-}
-
-
-
-body{
-    background:#eee;    
-}
-.chat-list {
-    padding: 0;
-    font-size: .8rem;
-}
-
-.chat-list li {
-    margin-bottom: 10px;
-    overflow: auto;
-    color: #ffffff;
-}
-
-.chat-list .chat-img {
-    float: left;
-    width: 48px;
-}
-
-.chat-list .chat-img img {
-    -webkit-border-radius: 50px;
-    -moz-border-radius: 50px;
-    border-radius: 50px;
-    width: 50%;
-}
-
-.chat-list .chat-message {
-    -webkit-border-radius: 50px;
-    -moz-border-radius: 50px;
-    border-radius: 50px;
-    background: #5a99ee;
-    display: inline-block;
-    padding: 10px 20px;
-    position: relative;
-}
-
-.chat-list .chat-message:before {
-    content: "";
-    position: absolute;
-    top: 15px;
-    width: 0;
-    height: 0;
-}
-
-.chat-list .chat-message h5 {
-    margin: 0 0 5px 0;
-    font-weight: 600;
-    line-height: 50%;
-    font-size: .9rem;
-}
-
-.chat-list .chat-message p {
-    line-height: 18px;
-    margin: 0;
-    padding: 0;
-}
-
-.chat-list .chat-body {
-    margin-left: 20px;
-    float: left;
-    width: 70%;
-}
-
-.chat-list .in .chat-message:before {
-    left: -12px;
-    border-bottom: 20px solid transparent;
-    border-right: 20px solid #5a99ee;
-}
-
-.chat-list .out .chat-img {
-    float: right;
-}
-
-.chat-list .out .chat-body {
-    float: right;
-    margin-right: 20px;
-    text-align: right;
-}
-
-.chat-list .out .chat-message {
-    background: #fc6d4c;
-}
-
-.chat-list .out .chat-message:before {
-    right: -12px;
-    border-bottom: 20px solid transparent;
-    border-left: 20px solid #fc6d4c;
-}
-
-.card .card-header:first-child {
-    -webkit-border-radius: 0.3rem 0.3rem 0 0;
-    -moz-border-radius: 0.3rem 0.3rem 0 0;
-    border-radius: 0.3rem 0.3rem 0 0;
-}
-.card .card-header {
-    background: #17202b;
-    border: 0;
-    font-size: 1rem;
-    padding: .65rem 1rem;
-    position: relative;
-    font-weight: 600;
-    color: #ffffff;
-}
-
-.content{
-    margin-top:40px;    
 }

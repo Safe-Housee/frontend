@@ -1,110 +1,111 @@
 <router-outlet></router-outlet>
 
+<main class="background">
 
-
-<div class="quadradocheckbox">
+<section class="header">
+  <div class="listcheckbox">
+    <div class="custom-checkbox">
+      <input id="checkbox-1" value="Tekken7" type="checkbox">
+      <label for="checkbox-1" class="text-white textjogo">Tekken 7</label>
+    </div>
   
-  <div class="checkbox">
-
-  <div class="custom-checkbox">
-    <input id="checkbox-1" value="Tekken7" type="checkbox">
-    <label for="checkbox-1" class="text-white textjogo custom1">Tekken 7</label>
-  </div>
-
-  <div class="custom-checkbox">
-    <input id="checkbox-2" value="Sala Vazia" type="checkbox">
-    <label for="checkbox-2" class="text-white checkbox2 textjogo">Sala Vazia</label>
-  </div>
-
-  <div class="custom-checkbox">
-    <input id="checkbox-3" value="LOL" type="checkbox">
-    <label for="checkbox-3" class="text-white textjogo custom2">LOL</label>
-  </div>
-
-  <div class="custom-checkbox">
-    <input id="checkbox-4" value="CS-GO" type="checkbox">
-    <label for="checkbox-4" class="text-white custom3">CS-GO </label>
-  </div>
-
+    <div class="custom-checkbox">
+      <input id="checkbox-2" value="Sala Vazia" type="checkbox">
+      <label for="checkbox-2" class="text-white textjogo">Sala Vazia</label>
+    </div>
   
-
-</div>
-
-<form class="form-inline ">
-  <input class="form-control mr-sm-2 pesquisa" type="search" placeholder="Pesquisar" aria-label="Search">
-  <button class="btn btn-outline-success my-2 my-sm-0 pesquisabotao" type="submit">Pesquisar</button>
-</form>
-<form class="form-inline ">
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-outline-success my-2 my-sm-0 modalbotao" data-toggle="modal" data-target="#exampleModal">
-  Criar Sala
-</button>
-</form>
-
-<div class="table-responsive-sm table-hover table-dark tableconfig">
-  <table class="table">
-    <thead>
-      <tr class="table-success">
-        <th scope="col">#</th>
-        <th scope="col">Jogo</th>
-        <th scope="col">Nome da Sala</th>
-        <th scope="col">Nível</th>
-        <th scope="col">Limite</th>
-      </tr>
-    </thead>
-    <tbody>
-     
-      <tr class="table-success" onclick="window.location='salasdeespera';">
-        <th scope="row">1</th>
-        <td>Tekken 7</td>
-        <td>Jogo 1</td>
-        <td>Iniciante</td>
-        <td>5/6</td>
-      </tr>
+    <div class="custom-checkbox">
+      <input id="checkbox-3" value="LOL" type="checkbox">
+      <label for="checkbox-3" class="text-white textjogo">LOL</label>
+    </div>
+  
+    <div class="custom-checkbox">
+      <input id="checkbox-4" value="CS-GO" type="checkbox">
+      <label for="checkbox-4" class="text-white">CS-GO </label>
+    </div>
+  </div>
     
-      <tr class="table-success">
-        <th scope="row">2</th>
-        <td>CS-GO</td>
-        <td>CS GOOOO</td>
-        <td>Iniciante</td>
-        <td>5/8</td>
-      </tr>
-      <tr class="table-success">
-        <th scope="row">3</th>
-        <td>LOL</td>
-        <td>LOL2251</td>
-        <td>Moderado</td>
-        <td>5/10</td>
-      </tr>
-
-      <tr class="table-success">
-        <th scope="row">4</th>
-        <td>LOL</td>
-        <td>LOL5472</td>
-        <td>Moderado</td>
-        <td>7/10</td>
-      </tr>
-
-      <tr class="table-success">
-        <th scope="row">5</th>
-        <td>CS-GO</td>
-        <td>CS-GO5421</td>
-        <td>Avançado</td>
-        <td>4/8</td>
-      </tr>
-    </tbody>
-  </table>
   
-</div>
+  <div class="pesquisar">
+    <input class="form-control mr-sm-2 imput" type="search" placeholder="Pesquisar" aria-label="Search">
+    <button class="btn btn-success my-2 my-sm-0 buttonpesquisar" type="submit">Pesquisar</button>
+  </div>
+</section>
+
+<section class="quadradotabela">
+  
+    <div class="table-responsive-sm table-hover table-dark tabela">
+      <table class="table">
+        <thead>
+          <tr class="table-success">
+            <th scope="col">#</th>
+            <th scope="col">Jogo</th>
+            <th scope="col">Nome da Sala</th>
+            <th scope="col">Nível</th>
+            <th scope="col">Limite</th>
+          </tr>
+        </thead>
+        <tbody>
+         
+          <tr class="table-success" onclick="window.location='salasdeespera';">
+            <th scope="row">1</th>
+            <td>Tekken 7</td>
+            <td>Jogo 1</td>
+            <td>Iniciante</td>
+            <td>5/6</td>
+          </tr>
+        
+          <tr class="table-success">
+            <th scope="row">2</th>
+            <td>CS-GO</td>
+            <td>CS GOOOO</td>
+            <td>Iniciante</td>
+            <td>5/8</td>
+          </tr>
+          <tr class="table-success">
+            <th scope="row">3</th>
+            <td>LOL</td>
+            <td>LOL2251</td>
+            <td>Moderado</td>
+            <td>5/10</td>
+          </tr>
+    
+          <tr class="table-success">
+            <th scope="row">4</th>
+            <td>LOL</td>
+            <td>LOL5472</td>
+            <td>Moderado</td>
+            <td>7/10</td>
+          </tr>
+    
+          <tr class="table-success">
+            <th scope="row">5</th>
+            <td>CS-GO</td>
+            <td>CS-GO5421</td>
+            <td>Avançado</td>
+            <td>4/8</td>
+          </tr>
+        </tbody>
+      </table>
+      
+    </div>
+
+</section>
+
+<section class="quadradocriarsala">
+
+  <div class="criarsala">
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-success my-2 my-sm-0 buttoncriarsala" data-toggle="modal" data-target="#exampleModal">
+      Criar Sala
+    </button>
+  </div>
+
+</section>
 
 
 
-
-
-
-
-
-
+</main>
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -145,12 +146,9 @@
         </select>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-        <button type="button" class="btn btn-primary">Criar Sala</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+        <button type="button" class="btn btn-success">Criar Sala</button>
       </div>
     </div>
   </div>
 </div>
-
-
-

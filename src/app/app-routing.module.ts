@@ -12,6 +12,7 @@ import { CadastrarUsuarioComponent } from './pages/cadastrar-usuario/cadastrar-u
 import { Error404Component } from './pages/error404/error404.component';
 import { AuthGuard } from './services/auth/auth.guard';
 import { LoginComponent } from './pages/login/login.component';
+import { AcademyComponent } from './pages/academy/academy.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'main', pathMatch: 'full'},
@@ -30,6 +31,8 @@ const routes: Routes = [
       {
         path: '**', component: Error404Component
       },
+     
+      { path: 'academy', component: AcademyComponent }
     ]
   },
 
