@@ -50,4 +50,8 @@ export class BackendConfigService {
   public static login() {
     return `${this.backendUrl()}/login`;
   }
+
+  public static partidas() {
+    return `${this.backendUrl()}/partidas`;
+  }
 }

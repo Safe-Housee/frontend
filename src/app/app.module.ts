@@ -28,7 +28,6 @@ import { DoacaoComponent } from './pages/doacao/doacao.component';
 import { SalaComponent } from './pages/sala/sala.component';
 import { CadastrarUsuarioComponent } from './pages/cadastrar-usuario/cadastrar-usuario.component';
 import { SalasdeesperaComponent } from './pages/salasdeespera/salasdeespera.component';
-import { Error404Component } from './pages/error404/error404.component';
 import { LoginComponent } from './pages/login/login.component';
 import { AuthGuard } from './services/auth/auth.guard';
 import { AcademyComponent } from './pages/academy/academy.component';
@@ -45,7 +44,6 @@ import { AcademyComponent } from './pages/academy/academy.component';
     SalaComponent,
     CadastrarUsuarioComponent,
     SalasdeesperaComponent,
-    Error404Component,
     LoginComponent,
     AcademyComponent,
   ],
