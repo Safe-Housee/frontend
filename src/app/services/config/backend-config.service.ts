@@ -54,4 +54,12 @@ export class BackendConfigService {
   public static partidas() {
     return `${this.backendUrl()}/partidas`;
   }
+
+  public static reportes() {
+    return `${this.backendUrl()}/reporte`;
+  }
+
+  public static getUsuario(cdUsuario: string | number) {
+    return `${this.backendUrl()}/usuarios/${cdUsuario}`;
+  }
 }

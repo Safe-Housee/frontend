@@ -1,4 +1,4 @@
-import { ApplicationRef, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
@@ -31,10 +31,14 @@ export class LoginComponent implements OnInit {
     }
     this.usuarioService.login(payload).subscribe(res => {
       localStorage['token'] = String(res.token);
-      this.openSnackBar('Logado com sucesso', 'Ir para o inicio');
-      setTimeout(() => {
-        this.router.navigate(['/main']);
-      }, 2000);
+      localStorage['cdUsuario'] = res.cdUsuario;
+      this.usuarioService.getUsuario(localStorage['cdUsuario']).subscribe(res => {
+        localStorage['nmUsuario'] = res.nm_usuario;
+        this.openSnackBar('Logado com sucesso', 'Ir para o inicio');
+        setTimeout(() => {
+          this.router.navigate(['/main']);
+        }, 2000);
+      });
     }, () => {
       this.openSnackBar('Erro ao logar, tente novamente', 'Ir para o inicio');
     });

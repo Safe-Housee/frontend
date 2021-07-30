@@ -8,7 +8,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
-import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatFormFieldModule, MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
@@ -31,6 +31,7 @@ import { SalasdeesperaComponent } from './pages/salasdeespera/salasdeespera.comp
 import { LoginComponent } from './pages/login/login.component';
 import { AuthGuard } from './services/auth/auth.guard';
 import { AcademyComponent } from './pages/academy/academy.component';
+import { MatDividerModule } from '@angular/material/divider';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { AcademyComponent } from './pages/academy/academy.component';
     SalasdeesperaComponent,
     LoginComponent,
     AcademyComponent,
+    ReportComponent
   ],
   imports: [
     BrowserModule,
@@ -68,8 +70,17 @@ import { AcademyComponent } from './pages/academy/academy.component';
     MatIconModule,
     MatCardModule,
     MatSnackBarModule,
+    MatDividerModule
   ],
-  providers: [AuthGuard],
+  providers: [
+    AuthGuard,
+    {
+      provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, 
+      useValue: {
+        appearance: 'fill'
+      }
+    }
+  ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
