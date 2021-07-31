@@ -16,14 +16,16 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatDividerModule } from '@angular/material/divider';
+import { QRCodeModule } from 'angularx-qrcode';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
-import { BodyComponent } from './body/body.component';
+import { BodyComponent } from './pages/body/body.component';
 import { ReportComponent } from './pages/report/report.component';
 import { LayoutComponent } from './layout/layout.component';
-import { MainComponent } from './main/main.component';
+import { MainComponent } from './pages/main/main.component';
 import { DoacaoComponent } from './pages/doacao/doacao.component';
 import { SalaComponent } from './pages/sala/sala.component';
 import { CadastrarUsuarioComponent } from './pages/cadastrar-usuario/cadastrar-usuario.component';
@@ -31,7 +33,7 @@ import { SalasdeesperaComponent } from './pages/salasdeespera/salasdeespera.comp
 import { LoginComponent } from './pages/login/login.component';
 import { AuthGuard } from './services/auth/auth.guard';
 import { AcademyComponent } from './pages/academy/academy.component';
-import { MatDividerModule } from '@angular/material/divider';
+
 
 @NgModule({
   declarations: [
@@ -70,7 +72,8 @@ import { MatDividerModule } from '@angular/material/divider';
     MatIconModule,
     MatCardModule,
     MatSnackBarModule,
-    MatDividerModule
+    MatDividerModule,
+    QRCodeModule
   ],
   providers: [
     AuthGuard,

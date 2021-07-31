@@ -1,20 +1,42 @@
 <router-outlet></router-outlet>
 
 
-<div class="control">
-    <img class="img-fluid"src="/assets/img/florian.jpg" />
-    <div class="superior2_texto">
-      <h3 class="h3"> AJUDE A SAFEHOUSE</h3>  
-          <div class="quadrado">
-              <p class="text"> A SAFEHOUSE tem como principal objetivo atender seus jogadores sempre da 
-                  melhor maneira possível, caso queira ajudar o site você pode, através do PIX,
-                  a SAFEHOUSE agradece a todos os usuários.
-                </p>
-          </div>
+<main class="background">
+    <section id="message">
+        <h1 id="title" class="text-white"> AJUDE A SAFEHOUSE</h1>  
+        <div id="message-box">
+            <h3 class="text-white"> A Safe House tem como principal objetivo atender seus jogadores sempre da 
+                melhor maneira possível, caso queira ajudar o site você pode, através do PIX,
+                a Safe House agradece a todos os usuários.
+            </h3>
+        </div>
+    </section>
+    <section id="images">
+        <div id="qrcode">
+            <qrcode [qrdata]="'Obrigado por doar'" [width]="256" [errorCorrectionLevel]="'M'"></qrcode>
+            <br />
+            <h3 class="text-white" style="margin-left: -23px">
+               Leia o QRCode acima e contribua com a SafeHouse.
+            </h3>
+        </div>
+        <div class="divisoria"></div>
+        <div id="log">
+            <img src="../../../assets/img/H.svg" [width]="256" alt="Logo da SafeHouse">
+        </div>
+    </section>
 
-         <div class="pix"></div>
-         <div class="divisoria"></div>
-         <div class="h"></div>
-    </div>
-</div>
+</main>
 
+<!-- <div class="superior2_texto">
+    <h3 class="h3"> AJUDE A SAFEHOUSE</h3>  
+        <div class="quadrado">
+            <p class="text"> A SAFEHOUSE tem como principal objetivo atender seus jogadores sempre da 
+                melhor maneira possível, caso queira ajudar o site você pode, através do PIX,
+                a SAFEHOUSE agradece a todos os usuários.
+              </p>
+        </div>
+
+      <qrcode [qrdata]="'Obrigado por doar'" [width]="256" [errorCorrectionLevel]="'M'"></qrcode>
+
+       <div class="divisoria"></div>
+       <div class="h"></div> -->
