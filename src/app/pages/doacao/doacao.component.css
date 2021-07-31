@@ -1,3 +1,52 @@
+.background {
+  background-color: #342446;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+#title {
+  text-align: center;
+  align-self: center;
+  width: 100%;
+}
+
+#message {
+  width: 100vw;
+  height: 20vh;
+  display: flex; /* seguir dentro da div*/
+  flex-direction: row; /* direção de uma linha vai ficar na mesma direção*/
+  flex-wrap: wrap; /* força ficar na mesma direção*/ 
+  justify-content: space-between; /* coloca espaço entre todos os items que estão dentro da div na horizontal*/ 
+  margin-top: 75px;
+  justify-content: center;
+}
+
+#message-box {
+  width: 53%;
+  border: white 2px solid;
+  padding: 16px;
+}
+
+#images {
+  margin-top: 105px;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  place-content: center;
+}
+
+div.divisoria {
+  height: 103%;
+  border: 1px solid;
+  border-color: #fff;
+  margin-left: 41px;
+  margin-right: 41px;
+}
+/*-------------*/
 .control {
     position: relative;
     width: 100vw;
@@ -42,24 +91,6 @@
     position: absolute;
     top: 20%;
     bottom: 65%;
-    left: 0%;
-    right: 0%;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
- }
-
-
- div.divisoria {
-    width:0%;
-    height:50%;
-    border: 1px solid; /* As 4 bordas sólidas com 25px de espessura */
-    border-color:#fff; /* cores: topo, direita, inferior, esquerda */
-    margin: auto;
-    position: absolute;
-    top: 80%;
-    bottom: 45%;
     left: 0%;
     right: 0%;
     -webkit-background-size: cover;

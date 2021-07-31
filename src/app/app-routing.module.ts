@@ -3,7 +3,7 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { LayoutComponent } from './layout/layout.component';
-import { MainComponent } from './main/main.component';
+import { MainComponent } from './pages/main/main.component';
 import { ReportComponent } from './pages/report/report.component';
 import { DoacaoComponent } from './pages/doacao/doacao.component';
 import { SalaComponent } from './pages/sala/sala.component';
@@ -20,13 +20,13 @@ const routes: Routes = [
     component: LayoutComponent,
     children: [
       { path: 'main', component: MainComponent },
+      { path: 'cadastro', component: CadastrarUsuarioComponent },
+      { path: 'login', component: LoginComponent },
       { path: 'report', component: ReportComponent, canActivate: [AuthGuard] },
       { path: 'doacao', component: DoacaoComponent },
       { path: 'sala', component: SalaComponent, canActivate: [AuthGuard] },
       { path: 'salasdeespera', component: SalasdeesperaComponent, canActivate: [AuthGuard] },
-      { path: 'cadastro', component: CadastrarUsuarioComponent },
-      { path: 'login', component: LoginComponent },
-      { path: 'academy', component: AcademyComponent }
+      { path: 'academy', component: AcademyComponent, canActivate: [AuthGuard] }
     ]
   },
 
