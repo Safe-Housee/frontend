@@ -34,7 +34,7 @@
         <label for='input-file'>
           Selecionar um arquivo
         </label>
-        <input id='input-file' type='file' />
+        <input id='input-file' name="file" type='file' (change)="fileChange($event)"/>
         <span id='file-name'></span>
       </div>
       <button class="buttons" [disabled]="!criarReport.valid" mat-raised-button color="primary" (click)="submit()">Concluir reporte</button>

@@ -13,4 +13,8 @@ export class ReportService {
   criarReporte(payload: any): Observable<any> {
     return this.http.post(BackendConfigService.reportes(), payload, BackendConfigService.httpOptions());
   }
+
+  salvarImagem(context: string, id: number | string, payload: any) {;
+    return this.http.post(BackendConfigService.uploadImage(context, id), payload, BackendConfigService.httpOptions(true));
+  }
 }
