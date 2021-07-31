@@ -25,13 +25,21 @@ export class BackendConfigService {
     return 'eyJhbGciOiJIUzI1NiJ9.MjM3.Rt13VkXeGkkNM1OMCtpKHhz85DWPAEumD03dDoiY2po';
   }
 
-  public static httpOptions() {
-    return {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        Authorization: BackendConfigService.token(),
-      }),
-    };
+  public static httpOptions(image: boolean = false) {
+    if(image) {
+      return {
+        headers: new HttpHeaders({
+          Authorization: BackendConfigService.token(),
+        }),
+      };
+    } else {    
+      return {
+        headers: new HttpHeaders({
+          'Content-Type': 'application/json',
+          Authorization: BackendConfigService.token(),
+        }),
+      };
+    }
   }
 
   public static handleError = (error: any) => {
@@ -53,5 +61,17 @@ export class BackendConfigService {
 
   public static partidas() {
     return `${this.backendUrl()}/partidas`;
+  }
+
+  public static reportes() {
+    return `${this.backendUrl()}/reporte`;
+  }
+
+  public static getUsuario(cdUsuario: string | number) {
+    return `${this.backendUrl()}/usuarios/${cdUsuario}`;
+  }
+
+  public static uploadImage(context: string, id: string | number) {
+    return `${this.backendUrl()}/uploadImage?context=${context}&id=${id}`;
   }
 }

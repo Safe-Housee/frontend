@@ -21,4 +21,9 @@ export class UsuarioServiceService {
     return this.http.post(BackendConfigService.login(), login, BackendConfigService.httpOptions())
     .pipe(catchError(BackendConfigService.handleError));
   }
+
+  getUsuario(cdUsuario: number | string): Observable<any> {
+    return this.http.get(BackendConfigService.getUsuario(cdUsuario), BackendConfigService.httpOptions())
+    .pipe(catchError(BackendConfigService.handleError));
+  }
 }

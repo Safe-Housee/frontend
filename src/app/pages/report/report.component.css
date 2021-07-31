@@ -1,246 +1,80 @@
-
-.control {
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    
-  }
-  .control img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    filter: blur(25px);
-  }
-  
-  .superior2_texto {
-    width: 80%;
-    height: 85%;
-    border-radius: 2px;
-    text-align: center;
-    background-color: #342446;
-    font-size: 30px;
-    color: #fff;
-    margin: auto;
-    position: absolute;
-    top: 20%;
-    bottom: 10%;
-    left: 0%;
-    right: 0%;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
-  }
-  
-  .h3{
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-    margin: 30px 30px;
-    
-  }
-
-  div.quadrado {
-    width:60%;
-    height:25%;
-    border: 2px solid; /* As 4 bordas sólidas com 25px de espessura */
-    border-color:#fff; /* cores: topo, direita, inferior, esquerda */
-    margin: auto;
-    position: absolute;
-    top: 20%;
-    bottom: 65%;
-    left: 0%;
-    right: 0%;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
- }
-
- div.divisao {
-    width:65%;
-    height:0%;
-    border: 1px solid; /* As 4 bordas sólidas com 25px de espessura */
-    border-color:#8b008b; /* cores: topo, direita, inferior, esquerda */
-    margin: auto;
-    position: absolute;
-    top: 40%;
-    bottom: 50%;
-    left: 0%;
-    right: 0%;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
- }
-
- .text {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: large;
-    text-align: justify;
-    margin: 20px 40px;
-  
-  }
-  
-
-  div.quadradousuario {
-    width:25%;
-    height:5%;
-    border: 3px; /* As 4 bordas sólidas com 25px de espessura */
-    border-color:#fff; /* cores: topo, direita, inferior, esquerda */
-    margin: auto;
-    position: absolute;
-    top: 55%;
-    bottom: 55%;
-    left: 0%;
-    right: 42%;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
- }
-
- .text2 {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: large;
-    text-align: justify;
-    margin: 0px 40px;
-  
-  }
-
-  .textnome {
-   
-    text-align: justify;
-    margin: 10px 40px;
-    width: 55%;
-    height:2%;
-    margin: auto;
-    position: absolute;
-    top: 10%;
-    bottom: 0%;
-    left: 0%;
-    right: 8%;
-
-  
-  }
-
-  div.quadradoreport {
-    width:25%;
-    height:5%;
-    border: 3px; /* As 4 bordas sólidas com 25px de espessura */
-    border-color:#fff; /* cores: topo, direita, inferior, esquerda */
-    margin: auto;
-    position: absolute;
-    top: 35%;
-    bottom: 0%;
-    left: 0%;
-    right: 42%;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
- }
-
-
- .textreport {
-  text-align: justify;
-  margin: 10px 40px;
-  width: 55%;
-  height:2%;
-  margin: auto;
-  position: absolute;
-  top: 45%;
-  bottom: 0%;
-  left: 0%;
-  right: 8%;
-
+.background {
+  background-color: #342446;
+  width: 100vw;
+  height: 100vh;
 }
 
-div.quadradoarquivodeprova {
-  width:25%;
-  height:5%;
-  border: 3px; /* As 4 bordas sólidas com 25px de espessura */
-  border-color:#fff; /* cores: topo, direita, inferior, esquerda */
-  margin: auto;
-  position: absolute;
-  top: 68%;
-  bottom: 0%;
-  left: 0%;
-  right: 42%;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  -o-background-size: cover;
-}
-
-
-.button1 {
-  background-color: #342446; /* Green */
-  font-size: 12px;
-  border: 1PX solid;
-  color: white;
-  padding: 20px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: flex;
-  border-radius: 4px;
-  height:20px; 
-  width:200px; 
-  margin: -20px -25px; 
-  position:relative;
-  top:75%; 
-  left: 22%;
+.header {
+  width: 100vw;
+  height: 15vh;
+  display: flex; /* seguir dentro da div*/
+  flex-direction: row; /* direção de uma linha vai ficar na mesma direção*/
+  flex-wrap: wrap; /* força ficar na mesma direção*/ 
+  justify-content: space-between; /* coloca espaço entre todos os items que estão dentro da div na horizontal*/ 
+  margin-top: 55px;
   justify-content: center;
+}
+
+#title {
+  text-align: center;
+  align-self: center;
+  width: 100%;
+}
+
+#message {
+  width: 53%;
+  border: white 2px solid;
+  padding: 16px;
+}
+
+#form {
+  width: 100vw;
+  height: 50vh;
+  display: flex; /* seguir dentro da div*/
+  flex-direction: column; /* direção de uma linha vai ficar na mesma direção*/
+  flex-wrap: wrap; /* força ficar na mesma direção*/ 
+  margin-top: 110px;
   align-items: center;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: medium;
- 
+}
+
+.input {
+  width: 50vw;
+} 
+
+#messageInput {
+  height: 12vh;
+}
+
+.buttons {
+  width: 190px;
+  margin: 6px;
+}
+
+#buttons {
+  margin: 5px;
+}
+
+#warning {
+  margin-top: 10px;
+  width: 53vw;
+  background-color: rgb(199, 49, 49);
 }
 
 
-.button2 {
-  background-color: #342446; /* Green */
-  font-size: 12px;
-  border: 1PX solid;
-  color: white;
-  padding: 20px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: flex;
-  border-radius: 4px;
-  height:20px; 
-  width:200px; 
-  margin: -20px -25px; 
-  position:relative;
-  top:71%; 
-  left: 42%;
-  justify-content: center;
-  align-items: center;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: medium;
- 
+
+input[type='file'] {
+  display: none
 }
 
+.input-wrapper label {
+  background-color: #3498db;
+  border-radius: 3px;
+  color: #fff;
+  padding: 8px 25px;
+  width: 190px;
 
-.button3 {
-  background-color: #342446; /* Green */
-  font-size: 12px;
-  border: 1PX solid;
-  color: white;
-  padding: 20px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: flex;
-  border-radius: 4px;
-  height:20px; 
-  width:200px; 
-  margin: -20px -25px; 
-  position:relative;
-  top:67%; 
-  left: 62%;
-  justify-content: center;
-  align-items: center;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: medium;
- 
+}
+
+.input-wrapper label:hover {
+  background-color: #2980b9
 }

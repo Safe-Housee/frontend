@@ -1,6 +1,5 @@
-import { ApplicationRef, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -18,5 +17,12 @@ export class HeaderComponent implements OnInit {
     } else {
       return false;
     }
+  }
+
+  logout() {
+    delete localStorage['token'];
+    delete localStorage['cdUsuario'];
+    delete localStorage['nmUsuario'];
+    this.route.navigate(['/login']);
   }
 }
