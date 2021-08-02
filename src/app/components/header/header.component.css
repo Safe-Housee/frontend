@@ -9,3 +9,11 @@
 #perfil {
   margin-right: 15px !important;
 }
+
+.clicavel {
+  cursor: pointer;
+}
+
+.clicavel :hover {
+  color: white;
+}

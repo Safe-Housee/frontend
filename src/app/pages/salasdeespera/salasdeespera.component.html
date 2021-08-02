@@ -2,12 +2,12 @@
 
 <main class="background">
 
-  <section class="listadeespera">
+  <section class="listadeespera" *ngIf="partida">
 
     <div class="placar">
-      <h2 class="h2">Nome da Sala:</h2>
-      <h2 class="h2">Nível:</h2>
-      <h2 class="h2">Jogadores:</h2>
+      <h2 class="h2">Nome da Sala: {{ partida.nm_partida }}</h2>
+      <h2 class="h2">Nível: {{ partida.ds_nivel }}</h2>
+      <h2 class="h2">Jogadores: {{ partida.usuariosNaPartida }}/{{ partida.limiteUsuarios }}</h2>
     </div>
     <div class="tablee">
     <div class="table-responsive-sm table-hover table-dark tabela">
@@ -20,38 +20,25 @@
             </tr>
           </thead>
           <tbody>
-            <tr class="table-success">
-              <th scope="row">1</th>
-              <td>Jogador 1</td>
-              <td>Iniciante</td>
-            </tr>
-            <tr class="table-success">
-              <th scope="row">2</th>
-              <td>Jogador 2</td>
-              <td>Iniciante</td>
-            </tr>
-            <tr class="table-success">
-              <th scope="row">3</th>
-              <td>Jogador 3</td>
-              <td>Iniciante</td>
-      
-            </tr>
-      
-            <tr class="table-success">
-              <th scope="row">4</th>
-              <td>Jogador 4</td>
-              <td>Iniciante</td>
-            </tr>
-      
-            <tr class="table-success">
-              <th scope="row">5</th>
-              <td>Jogador 5</td>
-              <td>Iniciante</td>
+            <tr class="table-success" *ngFor="let usuario of partida.jogadores; let i = index">
+              <th class="font-user" scope="row">{{ i }}</th>
+              <th class="font-user">{{ usuario.nm_usuario }}</th>
+              <th class="font-user">Honra do usuário</th>
             </tr>
           </tbody>
         </table>
       </div>
     </div>
+  </section>
+
+  <section class="carregando" *ngIf="!partida">
+    <mat-progress-spinner
+        class="carregando"
+        color="primary"
+        mode="indeterminate"
+        value="50">
+    </mat-progress-spinner>
+    
   </section>
 
 </main>

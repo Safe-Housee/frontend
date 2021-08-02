@@ -25,7 +25,7 @@ const routes: Routes = [
       { path: 'report', component: ReportComponent, canActivate: [AuthGuard] },
       { path: 'doacao', component: DoacaoComponent },
       { path: 'sala', component: SalaComponent, canActivate: [AuthGuard] },
-      { path: 'salasdeespera', component: SalasdeesperaComponent, canActivate: [AuthGuard] },
+      { path: 'salasdeespera/:id', component: SalasdeesperaComponent, canActivate: [AuthGuard] },
       { path: 'academy', component: AcademyComponent, canActivate: [AuthGuard] }
     ]
   },

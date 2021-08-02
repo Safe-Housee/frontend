@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { ApplicationRef, Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
+import { gameId } from 'src/app/enums/gameId';
 import { SalasService } from 'src/app/services/salas/salas.service';
 
 @Component({
@@ -11,17 +13,22 @@ import { SalasService } from 'src/app/services/salas/salas.service';
 export class SalaComponent implements OnInit {
   partidas: any = [];
   partidaForm: any;
-  constructor(private partidasService: SalasService, private _snackBar: MatSnackBar) { }
+  csgo: boolean = false;
+  lol: boolean = false;
+  tekken: boolean = false;
+  empty: boolean = false;
+  propsToSetFalse = ['csgo', 'lol', 'tekken'];
+  searchName: string;
+
+  constructor(
+    private partidasService: SalasService, 
+    private _snackBar: MatSnackBar, 
+    private route: Router,
+    private appRef: ApplicationRef) { }
 
   ngOnInit(): void {
-    this.loadPartidas();
+    this.selectLoadMehod('default');
     this.iniciarFormulario();
-  }
-
-  loadPartidas(): void {
-    this.partidasService.getSalas().subscribe(res => {
-      this.partidas = res.partidas;
-    });
   }
 
   iniciarFormulario(): void {
@@ -29,17 +36,17 @@ export class SalaComponent implements OnInit {
       cd_jogo: new FormControl(null, [Validators.required]),
       nm_partida: new FormControl(null, [Validators.required]),
       cd_usuario: new FormControl(localStorage['cdUsuario'], [Validators.required]),
+      ds_nivel: new FormControl(null, [Validators.required])
     });
   }
 
   submit(): void {
-    console.log(this.partidaForm.value);
     const date = new Date();
     const payload = {
       dt_partida: `${date.getDate()}/${date.getMonth()+1}/${date.getFullYear()}`,
       hr_partida: `${date.getHours()}:${date.getMinutes()}`,
       ...this.partidaForm.value
-    }
+    };
     this.partidasService.criarPartida(payload).subscribe(() => {
       this.openSnackBar('Sala criada com sucesso!');
       this.loadPartidas();
@@ -55,4 +62,63 @@ export class SalaComponent implements OnInit {
     });
   }
 
+  salaDeEspera(cdPartida: number) {
+    this.route.navigate([`/salasdeespera/${cdPartida}`]);
+  }
+
+  changeValue(event: any) {
+    const prop = event.target.value;
+
+    for (const key of Object.keys(this)) {
+      if(key !== prop && this.propsToSetFalse.includes(key) && prop !== 'empty') {
+        this[key] = false;
+      }
+    }
+    this[prop] = !this[prop];
+    this.appRef.tick();
+    this.selectLoadMehod('filter');
+  }
+
+  selectLoadMehod(type: string) {
+    if (type === 'filter') {
+      this.loadPartidaComFiltros();
+    }
+
+    if (type === 'searchName') {
+      this.loadPartidaByName();
+    }
+
+    if (type === 'default') {
+      this.loadPartidas();
+    }
+  }
+
+  loadPartidaComFiltros() {
+    let gameIdToSearch = 0;
+    this.propsToSetFalse.forEach(game => {
+      if(this[game]) {
+        gameIdToSearch = gameId[game];
+      }
+    });
+
+    this.partidasService.partidasPorFiltro(gameIdToSearch, this.empty).subscribe(res => {
+      this.partidas = res.partidas;
+    });
+  }
+
+  loadPartidaByName() {
+    if(!this.searchName) {
+      this.loadPartidas();
+    } else {
+      this.partidasService.partidasPorNome(this.searchName).subscribe(res => {
+        this.partidas = res.partidas;
+      });
+    }
+  }
+
+  loadPartidas(): void {
+    this.partidasService.getSalas().subscribe(res => {
+      this.partidas = res.partidas;
+    });
+  }
 }

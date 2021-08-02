@@ -63,6 +63,27 @@ export class BackendConfigService {
     return `${this.backendUrl()}/partidas`;
   }
 
+  public static partidasPorFiltro(gameId: number, empty: boolean) {
+    let url = `${this.backendUrl()}/partidas?`;
+
+    if (gameId) {
+      url += `gameId=${gameId}`;
+    }
+    if (empty) {
+      url += `empty=true`;
+    }
+
+    return url;
+  }
+
+  public static partidasNome(nmPartida: string) {
+    return `${this.backendUrl()}/partidas?name=${nmPartida}`;
+  }
+
+  public static partidasPorId(cdPartida: number) {
+    return `${this.backendUrl()}/partidas/${cdPartida}`;
+  }
+
   public static reportes() {
     return `${this.backendUrl()}/reporte`;
   }

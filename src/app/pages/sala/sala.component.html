@@ -5,30 +5,31 @@
   <section class="header">
     <div class="listcheckbox">
       <div class="custom-checkbox">
-        <input id="checkbox-1" value="Tekken7" type="checkbox">
+        <input (click)="changeValue($event)" id="checkbox-1" [value]="'tekken'" type="checkbox" [(ngModel)]="tekken">
         <label for="checkbox-1" class="text-white textjogo">Tekken 7</label>
       </div>
 
       <div class="custom-checkbox">
-        <input id="checkbox-2" value="Sala Vazia" type="checkbox">
-        <label for="checkbox-2" class="text-white textjogo">Sala Vazia</label>
-      </div>
-
-      <div class="custom-checkbox">
-        <input id="checkbox-3" value="LOL" type="checkbox">
+        <input (click)="changeValue($event)" id="checkbox-3" [value]="'lol'" type="checkbox" [(ngModel)]="lol">
         <label for="checkbox-3" class="text-white textjogo">LOL</label>
       </div>
 
       <div class="custom-checkbox">
-        <input id="checkbox-4" value="CS-GO" type="checkbox">
+        <input (click)="changeValue($event)" id="checkbox-4" [value]="'csgo'" type="checkbox" [(ngModel)]="csgo">
         <label for="checkbox-4" class="text-white">CS-GO </label>
       </div>
+
+      <div class="custom-checkbox">
+        <input (click)="changeValue($event)" id="checkbox-2" [value]="'empty'" type="checkbox">
+        <label for="checkbox-2" class="text-white textjogo">Sala Vazia</label>
+      </div>
+
     </div>
 
 
     <div class="pesquisar">
-      <input class="form-control mr-sm-2 imput" type="search" placeholder="Pesquisar" aria-label="Search">
-      <button class="btn btn-success my-2 my-sm-0 buttonpesquisar" type="submit">Pesquisar</button>
+      <input class="form-control mr-sm-2 imput" type="search" placeholder="Pesquisar" aria-label="Search" [(ngModel)]="searchName">
+      <button class="btn btn-success my-2 my-sm-0 buttonpesquisar" type="submit" (click)="selectLoadMehod('searchName')">Pesquisar</button>
     </div>
   </section>
 
@@ -47,11 +48,11 @@
         </thead>
 
         <tbody *ngIf="partidas?.length">
-          <tr class="table-success" *ngFor="let partida of partidas; let i = index">
+          <tr class="table-success clicavel" *ngFor="let partida of partidas; let i = index" (click)="salaDeEspera(partida.cd_partida)">
             <th scope="row">{{ i }}</th>
             <td>{{ partida.nm_jogo }}</td>
             <td>{{ partida.nm_partida }}</td>
-            <td>Iniciante</td>
+            <td>{{ partida.ds_nivel }}</td>
             <td>{{ partida.jogadores?.length ? partida.jogadores?.length : '0' }}/{{partida.limiteUsuarios}}</td>
           </tr>
         </tbody>
@@ -104,10 +105,10 @@
 
 
           <label for="exampleFormControlSelect2">Nível</label>
-          <select class="form-control">
-            <option>Iniciante</option>
-            <option>Moderado</option>
-            <option>Avançado</option>
+          <select class="form-control" formControlName="ds_nivel">
+            <option value="Iniciante">Iniciante</option>
+            <option value="Moderado">Moderado</option>
+            <option value="Avançado">Avançado</option>
           </select>
 
         </form>

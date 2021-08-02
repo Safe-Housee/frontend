@@ -17,4 +17,16 @@ export class SalasService {
   criarPartida(payload: any): Observable<any> {
     return this.http.post(BackendConfigService.partidas(), payload, BackendConfigService.httpOptions());
   }
+
+  partidaPorId(cdPartida: number): Observable<any> {
+    return this.http.get(BackendConfigService.partidasPorId(cdPartida), BackendConfigService.httpOptions());
+  }
+
+  partidasPorFiltro(gameId: number, empty: boolean): Observable<any> {
+    return this.http.get(BackendConfigService.partidasPorFiltro(gameId, empty), BackendConfigService.httpOptions());
+  }
+
+  partidasPorNome(nmPartida: string): Observable<any> {
+    return this.http.get(BackendConfigService.partidasNome(nmPartida), BackendConfigService.httpOptions());
+  }
 }

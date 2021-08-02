@@ -17,6 +17,8 @@ import { MatCardModule } from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+
 import { QRCodeModule } from 'angularx-qrcode';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -59,7 +61,6 @@ import { AcademyComponent } from './pages/academy/academy.component';
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    NoopAnimationsModule,
     //Materials imports
     MatGridListModule,
     MatListModule,
@@ -73,17 +74,10 @@ import { AcademyComponent } from './pages/academy/academy.component';
     MatCardModule,
     MatSnackBarModule,
     MatDividerModule,
-    QRCodeModule
+    QRCodeModule,
+    MatProgressSpinnerModule
   ],
-  providers: [
-    AuthGuard,
-    {
-      provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, 
-      useValue: {
-        appearance: 'fill'
-      }
-    }
-  ],
+  providers: [AuthGuard],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

@@ -23,8 +23,7 @@
             Jogo
           </a>
           <div class="dropdown-menu" style="background-color: #342446;" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item text-white" href="#">Lista de Jogos</a>
-            <a class="dropdown-item text-white" [routerLink]="['sala']">Jogar</a>
+            <a class="dropdown-item text-white" [routerLink]="['sala']">Lista de salas</a>
           </div>
         </li>
 
@@ -44,7 +43,7 @@
 
     <div class="nav navbar-nav navbar-right" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li *ngIf="isLogged()" (click)="logout()" class="nav-item">
+        <li *ngIf="isLogged()" (click)="logout()" class="nav-item clicavel">
           <a class="nav-link">
             <img src="assets/power-off.svg" width="25" height="25">
             Sair
