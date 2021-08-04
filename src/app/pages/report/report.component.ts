@@ -16,7 +16,7 @@ export class ReportComponent implements OnInit {
   formData: FormData;
 
   constructor(
-    private reportService: ReportService, 
+    private reportService: ReportService,
     private _snackBar: MatSnackBar,
     private route: Router) { }
 
@@ -33,26 +33,26 @@ export class ReportComponent implements OnInit {
       (res) => {
         console.log(res)
         this.reportService.salvarImagem('report', res.cd_reporte, this.formData).subscribe(
-        () => {}, 
-        () => this.openSnackBar('Erro ao salvar as imagens. Tente novamente'));
-        this.openSnackBar('Reporte enviado com sucesso!','Ok');
+          () => {},
+          () => this.openSnackBar('Erro ao salvar as imagens. Tente novamente'));
+        this.openSnackBar('Reporte enviado com sucesso!', 'Ok');
         setTimeout(() => {
           this.route.navigate(['/main']);
-        }, 2000);
-      }, 
-      (err) => this.openSnackBar(err.error.message,'Ok'));
+        }, 1000);
+      },
+      (err) => this.openSnackBar(err.error.message, 'Ok'));
   }
 
   openSnackBar(message: string, action = null) {
     console.log(message)
     this._snackBar.open(message, action, {
-      duration: 2000,
+      duration: 1000,
     });
   }
 
   fileChange(event) {
     const fileList: FileList = event.target.files;
-    if(fileList.length > 0) {
+    if (fileList.length > 0) {
       const file: File = fileList[0];
       this.formData = new FormData();
       this.formData.append('file', file, file.name);

@@ -32,12 +32,11 @@ export class LoginComponent implements OnInit {
     this.usuarioService.login(payload).subscribe(res => {
       localStorage['token'] = String(res.token);
       localStorage['cdUsuario'] = res.cdUsuario;
+
       this.usuarioService.getUsuario(localStorage['cdUsuario']).subscribe(res => {
         localStorage['nmUsuario'] = res.nm_usuario;
         this.openSnackBar('Logado com sucesso', 'Ir para o inicio');
-        setTimeout(() => {
-          this.router.navigate(['/main']);
-        }, 2000);
+        this.router.navigate(['/main']);
       });
     }, () => {
       this.openSnackBar('Erro ao logar, tente novamente', 'Ir para o inicio');
@@ -46,7 +45,7 @@ export class LoginComponent implements OnInit {
 
   openSnackBar(message: string, action = null) {
     this._snackBar.open(message, action, {
-      duration: 2000
+      duration: 1000
     });
   }
 }

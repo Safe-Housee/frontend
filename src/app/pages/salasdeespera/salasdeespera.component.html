@@ -23,7 +23,7 @@
             <tr class="table-success" *ngFor="let usuario of partida.jogadores; let i = index">
               <th class="font-user" scope="row">{{ i }}</th>
               <th class="font-user">{{ usuario.nm_usuario }}</th>
-              <th class="font-user">Honra do usuário</th>
+              <th class="font-user">{{ usuario.nm_nivel }}</th>
             </tr>
           </tbody>
         </table>

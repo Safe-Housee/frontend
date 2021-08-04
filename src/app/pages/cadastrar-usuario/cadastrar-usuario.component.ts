@@ -58,7 +58,7 @@ export class CadastrarUsuarioComponent implements OnInit {
 
   openSnackBar(message: string, action = null) {
     this._snackBar.open(message, action, {
-      duration: 2000
+      duration: 500
     });
   }
 
@@ -68,7 +68,7 @@ export class CadastrarUsuarioComponent implements OnInit {
       this.openSnackBar('Usuário cadastrado', 'Ir para o inicio');
       setTimeout(() => {
         this.router.navigate(['/main']);
-      }, 2000);
+      }, 1000);
     })
   }
 }

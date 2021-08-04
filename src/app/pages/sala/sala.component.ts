@@ -47,9 +47,11 @@ export class SalaComponent implements OnInit {
       hr_partida: `${date.getHours()}:${date.getMinutes()}`,
       ...this.partidaForm.value
     };
-    this.partidasService.criarPartida(payload).subscribe(() => {
+    this.partidasService.criarPartida(payload).subscribe((res) => {
       this.openSnackBar('Sala criada com sucesso!');
-      this.loadPartidas();
+      const btnModal: HTMLButtonElement = document.querySelector('#closeModal');
+      btnModal.click();
+      setTimeout(() => this.salaDeEspera(res.partida.cd_partida), 500);
     }, (err) => {
       console.log(err)
       this.openSnackBar('Erro ao criar a sala...');
