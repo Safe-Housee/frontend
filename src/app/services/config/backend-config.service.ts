@@ -12,8 +12,7 @@ export class BackendConfigService {
   private static _data = {
     backend: {
       dev: 'http://localhost:3333',
-      stg: '',
-      prod: '',
+      prd: 'https://safehouse-api-fatec.herokuapp.com/',
     },
   };
 
