@@ -29,4 +29,8 @@ export class SalasService {
   partidasPorNome(nmPartida: string): Observable<any> {
     return this.http.get(BackendConfigService.partidasNome(nmPartida), BackendConfigService.httpOptions());
   }
+
+  sairDaPartida(cdPartida: number, cdUsuario: number): Observable<any> {
+    return this.http.patch(BackendConfigService.sairPartida(cdPartida, cdUsuario), null, BackendConfigService.httpOptions());
+  }
 }

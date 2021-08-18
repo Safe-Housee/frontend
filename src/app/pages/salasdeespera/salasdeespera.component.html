@@ -1,9 +1,7 @@
 <router-outlet></router-outlet>
 
 <main class="background">
-
-  <section class="listadeespera" *ngIf="partida">
-
+    <section class="listadeespera" *ngIf="partida">
     <div class="placar">
       <h2 class="h2">Nome da Sala: {{ partida.nm_partida }}</h2>
       <h2 class="h2">Nível: {{ partida.ds_nivel }}</h2>
@@ -28,6 +26,10 @@
           </tbody>
         </table>
       </div>
+    </div>
+    <div id="footer">
+      <button (click)="back()" class="backButton" mat-raised-button>Voltar</button>
+      <button (click)="exit()" class="exitButton" mat-raised-button color="warn">Sair</button>
     </div>
   </section>
 

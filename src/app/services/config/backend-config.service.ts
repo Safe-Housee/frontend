@@ -12,12 +12,12 @@ export class BackendConfigService {
   private static _data = {
     backend: {
       dev: 'http://localhost:3333',
-      prd: 'https://safehouse-api-fatec.herokuapp.com/',
+      prd: 'https://safehouse-api-fatec.herokuapp.com',
     },
   };
 
   private static backendUrl() {
-    return this._data.backend.dev;
+    return this._data.backend.prd;
   }
 
   public static token() {
@@ -93,5 +93,9 @@ export class BackendConfigService {
 
   public static uploadImage(context: string, id: string | number) {
     return `${this.backendUrl()}/uploadImage?context=${context}&id=${id}`;
+  }
+
+  public static sairPartida(cdPartida: number, cdUsuario: number) {
+    return `${this.partidasPorId(cdPartida)}/usuario/${cdUsuario}/exit`;
   }
 }

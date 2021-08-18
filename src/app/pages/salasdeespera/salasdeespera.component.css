@@ -47,3 +47,15 @@
 .h2 {
   color: #fff;
 }
+
+#footer {
+  width: 100vw;
+  height: 10vh;
+  margin-top: -62px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: self-end;
+  margin-left: 32px;
+  justify-content: space-evenly;
+}

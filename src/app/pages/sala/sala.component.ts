@@ -4,6 +4,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { gameId } from 'src/app/enums/gameId';
 import { SalasService } from 'src/app/services/salas/salas.service';
+import { partida } from 'src/app/utils/storage';
 
 @Component({
   selector: 'app-sala',
@@ -29,6 +30,10 @@ export class SalaComponent implements OnInit {
   ngOnInit(): void {
     this.selectLoadMehod('default');
     this.iniciarFormulario();
+    console.log(partida.getPartida())
+    if(partida.getPartida()) {
+      this.salaDeEspera(partida.getPartida());
+    }
   }
 
   iniciarFormulario(): void {
@@ -66,6 +71,7 @@ export class SalaComponent implements OnInit {
 
   salaDeEspera(cdPartida: number) {
     this.route.navigate([`/salasdeespera/${cdPartida}`]);
+    partida.setPartida(cdPartida);
   }
 
   changeValue(event: any) {
