@@ -1,10 +1,12 @@
 import { ApplicationRef, Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { gameId } from 'src/app/enums/gameId';
 import { SalasService } from 'src/app/services/salas/salas.service';
 import { partida } from 'src/app/utils/storage';
+import { ConfirmSalaComponent } from '../confirm-sala/confirm-sala.component';
 
 @Component({
   selector: 'app-sala',
@@ -25,7 +27,8 @@ export class SalaComponent implements OnInit {
     private partidasService: SalasService, 
     private _snackBar: MatSnackBar, 
     private route: Router,
-    private appRef: ApplicationRef) { }
+    private appRef: ApplicationRef,
+    public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.selectLoadMehod('default');
@@ -60,6 +63,15 @@ export class SalaComponent implements OnInit {
     }, (err) => {
       console.log(err)
       this.openSnackBar('Erro ao criar a sala...');
+    });
+  }
+
+  openDialog(cdPartida: number) {
+    const dialogRef = this.dialog.open(ConfirmSalaComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.salaDeEspera(cdPartida);
+      console.log(`Dialog result: ${result}`);
     });
   }
 

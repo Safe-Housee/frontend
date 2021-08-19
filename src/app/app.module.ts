@@ -35,6 +35,7 @@ import { SalasdeesperaComponent } from './pages/salasdeespera/salasdeespera.comp
 import { LoginComponent } from './pages/login/login.component';
 import { AuthGuard } from './services/auth/auth.guard';
 import { AcademyComponent } from './pages/academy/academy.component';
+import { ConfirmSalaComponent } from './pages/confirm-sala/confirm-sala.component';
 
 
 @NgModule({
@@ -51,7 +52,8 @@ import { AcademyComponent } from './pages/academy/academy.component';
     SalasdeesperaComponent,
     LoginComponent,
     AcademyComponent,
-    ReportComponent
+    ReportComponent,
+    ConfirmSalaComponent
   ],
   imports: [
     BrowserModule,

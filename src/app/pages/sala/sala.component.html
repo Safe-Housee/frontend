@@ -47,8 +47,8 @@
           </tr>
         </thead>
 
-        <tbody *ngIf="partidas?.length">
-          <tr class="table-success clicavel" *ngFor="let partida of partidas; let i = index" (click)="salaDeEspera(partida.cd_partida)">
+        <tbody *ngIf="false">
+          <tr class="table-success clicavel" *ngFor="let partida of partidas; let i = index" (click)="openDialog(partida.cd_partida)">
             <th scope="row">{{ i }}</th>
             <td>{{ partida.nm_jogo }}</td>
             <td>{{ partida.nm_partida }}</td>
@@ -56,6 +56,14 @@
             <td>{{ partida.jogadores?.length ? partida.jogadores?.length : '0' }}/{{partida.limiteUsuarios}}</td>
           </tr>
         </tbody>
+        <div id="carregando" *ngIf="true">
+          <mat-progress-spinner
+            class="carregando"
+            color="primary"
+            mode="indeterminate"
+            value="50">
+          </mat-progress-spinner>
+        </div>
       </table>
     </div>
   </section>

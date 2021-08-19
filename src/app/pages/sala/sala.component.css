@@ -131,3 +131,13 @@
   border: none;
   padding: 1px;
 }
+
+#carregando {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 385%;
+  margin-top: 18px;
+}
