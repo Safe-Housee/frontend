@@ -17,3 +17,7 @@
 .clicavel :hover {
   color: white;
 }
+
+#logged {
+  align-self: center;
+}

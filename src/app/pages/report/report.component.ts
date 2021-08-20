@@ -24,14 +24,13 @@ export class ReportComponent implements OnInit {
     this.criarReport = new FormGroup({
       nm_reportado: new FormControl(null, [Validators.required]),
       ds_reporte: new FormControl(null, [Validators.required]),
-      nm_reportador: new FormControl(localStorage['nmUsuario']),
+      nm_reportador: new FormControl(sessionStorage['nmUsuario']),
     });
   }
 
   submit() {
     this.reportService.criarReporte(this.criarReport.value).subscribe(
       (res) => {
-        console.log(res)
         this.reportService.salvarImagem('report', res.cd_reporte, this.formData).subscribe(
           () => {},
           () => this.openSnackBar('Erro ao salvar as imagens. Tente novamente'));
@@ -44,7 +43,6 @@ export class ReportComponent implements OnInit {
   }
 
   openSnackBar(message: string, action = null) {
-    console.log(message)
     this._snackBar.open(message, action, {
       duration: 1000,
     });

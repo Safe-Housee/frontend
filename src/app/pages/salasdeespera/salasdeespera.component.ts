@@ -34,7 +34,7 @@ export class SalasdeesperaComponent implements OnInit {
   }
 
   exit() {
-    this.salaService.sairDaPartida(this.cdPartida ,localStorage['cdUsuario']).subscribe(
+    this.salaService.sairDaPartida(this.cdPartida ,sessionStorage['cdUsuario']).subscribe(
       () => {
         partida.removerPartida();
         this.back();

@@ -22,6 +22,7 @@ export class SalaComponent implements OnInit {
   empty: boolean = false;
   propsToSetFalse = ['csgo', 'lol', 'tekken'];
   searchName: string;
+  showLoading: boolean = false;
 
   constructor(
     private partidasService: SalasService, 
@@ -35,7 +36,7 @@ export class SalaComponent implements OnInit {
     this.iniciarFormulario();
     console.log(partida.getPartida())
     if(partida.getPartida()) {
-      this.salaDeEspera(partida.getPartida());
+      this.salaDeEspera(Number(partida.getPartida()));
     }
   }
 
@@ -43,7 +44,7 @@ export class SalaComponent implements OnInit {
     this.partidaForm = new FormGroup({
       cd_jogo: new FormControl(null, [Validators.required]),
       nm_partida: new FormControl(null, [Validators.required]),
-      cd_usuario: new FormControl(localStorage['cdUsuario'], [Validators.required]),
+      cd_usuario: new FormControl(sessionStorage['cdUsuario'], [Validators.required]),
       ds_nivel: new FormControl(null, [Validators.required])
     });
   }
@@ -67,11 +68,15 @@ export class SalaComponent implements OnInit {
   }
 
   openDialog(cdPartida: number) {
-    const dialogRef = this.dialog.open(ConfirmSalaComponent);
+    const dialogRef = this.dialog.open(ConfirmSalaComponent, {
+      data: {
+        cdPartida,
+        cdUsuario: sessionStorage['cdUsuario']
+      }
+    });
 
     dialogRef.afterClosed().subscribe(result => {
       this.salaDeEspera(cdPartida);
-      console.log(`Dialog result: ${result}`);
     });
   }
 
@@ -100,6 +105,8 @@ export class SalaComponent implements OnInit {
   }
 
   selectLoadMehod(type: string) {
+    this.showLoading = true;
+    this.partidas = [];
     if (type === 'filter') {
       this.loadPartidaComFiltros();
     }
@@ -111,6 +118,8 @@ export class SalaComponent implements OnInit {
     if (type === 'default') {
       this.loadPartidas();
     }
+    setTimeout(() => this.showLoading = false, 1000);
+    
   }
 
   loadPartidaComFiltros() {

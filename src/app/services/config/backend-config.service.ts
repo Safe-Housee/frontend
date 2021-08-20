@@ -17,27 +17,27 @@ export class BackendConfigService {
   };
 
   private static backendUrl() {
-    return this._data.backend.prd;
+    return this._data.backend.dev;
   }
 
   public static token() {
-    return 'eyJhbGciOiJIUzI1NiJ9.MjM3.Rt13VkXeGkkNM1OMCtpKHhz85DWPAEumD03dDoiY2po';
+    return sessionStorage.getItem('token') || '';
   }
 
   public static httpOptions(image: boolean = false) {
+    const props = {
+      Authorization: BackendConfigService.token(),
+      'Content-Type': 'application/json',
+    }
+
+    if (!props.Authorization) {
+      delete props.Authorization
+    }
     if(image) {
-      return {
-        headers: new HttpHeaders({
-          Authorization: BackendConfigService.token(),
-        }),
-      };
-    } else {    
-      return {
-        headers: new HttpHeaders({
-          'Content-Type': 'application/json',
-          Authorization: BackendConfigService.token(),
-        }),
-      };
+      delete props['Content-Type']
+    }
+    return {
+        headers: new HttpHeaders(props),
     }
   }
 
@@ -47,6 +47,7 @@ export class BackendConfigService {
     } else {
       console.error(`Backend returned code ${error.status}, ` + `body was: ${error.error}`);
     }
+    console.log(error);
     return throwError('Something bad happened; please try again later.');
   };
 
@@ -95,7 +96,12 @@ export class BackendConfigService {
     return `${this.backendUrl()}/uploadImage?context=${context}&id=${id}`;
   }
 
+
+  public static partidaUsuario(cdPartida: number, cdUsuario: number) {
+    return `${this.partidasPorId(cdPartida)}/usuario/${cdUsuario}`;
+  }
+
   public static sairPartida(cdPartida: number, cdUsuario: number) {
-    return `${this.partidasPorId(cdPartida)}/usuario/${cdUsuario}/exit`;
+    return `${this.partidaUsuario(cdPartida, cdUsuario)}/exit`;
   }
 }

@@ -1,20 +1,25 @@
 const setPartida = (cdPartida) => {
-    localStorage['partidaAtual'] = cdPartida;
+    sessionStorage.setItem('partidaAtual', cdPartida);
     setTimeout(() => {
         removerPartida();
     }, 3600000);
 }
 
-const removerPartida = () => delete localStorage['partidaAtual'];
+const removerPartida = () => sessionStorage.removeItem('partidaAtual');
 
-const getPartida = () => localStorage['partidaAtual'];
-
+const getPartida = () => sessionStorage.getItem('partidaAtual');
+const getUsuario = () => sessionStorage.getItem('cdUsuario');
 const partida = {
     removerPartida,
     setPartida,
     getPartida
 }
 
+const usuario = {
+    getUsuario
+}
+
 export {
-    partida
+    partida,
+    usuario
 }

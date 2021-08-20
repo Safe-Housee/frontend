@@ -30,15 +30,16 @@ export class LoginComponent implements OnInit {
       senha: this.login.value.senha
     }
     this.usuarioService.login(payload).subscribe(res => {
-      localStorage['token'] = String(res.token);
-      localStorage['cdUsuario'] = res.cdUsuario;
+      sessionStorage.setItem('token', String(res.token)) ;
+      sessionStorage.setItem('cdUsuario', res.cdUsuario);
 
-      this.usuarioService.getUsuario(localStorage['cdUsuario']).subscribe(res => {
-        localStorage['nmUsuario'] = res.nm_usuario;
+      this.usuarioService.getUsuario(res.cdUsuario).subscribe(res => {
+        sessionStorage.setItem('nmUsuario', res.nm_usuario);
         this.openSnackBar('Logado com sucesso', 'Ir para o inicio');
         this.router.navigate(['/main']);
       });
-    }, () => {
+    }, (err) => {
+      console.log(err);
       this.openSnackBar('Erro ao logar, tente novamente', 'Ir para o inicio');
     });
   }

@@ -33,4 +33,8 @@ export class SalasService {
   sairDaPartida(cdPartida: number, cdUsuario: number): Observable<any> {
     return this.http.patch(BackendConfigService.sairPartida(cdPartida, cdUsuario), null, BackendConfigService.httpOptions());
   }
+
+  entrarPartida(cdPartida: number, cdUsuario: number): Observable<any> {
+    return this.http.patch(BackendConfigService.partidaUsuario(cdPartida, cdUsuario), null, BackendConfigService.httpOptions());
+  }
 }

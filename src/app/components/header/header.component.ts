@@ -6,13 +6,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  userName: string = ''
   constructor(private route: Router) { }
 
   ngOnInit(): void {
+    this.userName = sessionStorage.getItem('nmUsuario') || '';
   }
 
   isLogged() {
-    if(localStorage['token']) {
+    if(sessionStorage.getItem('token')) {
       return true;
     } else {
       return false;
@@ -20,9 +22,7 @@ export class HeaderComponent implements OnInit {
   }
 
   logout() {
-    delete localStorage['token'];
-    delete localStorage['cdUsuario'];
-    delete localStorage['nmUsuario'];
+    sessionStorage.clear();
     this.route.navigate(['/login']);
   }
 }

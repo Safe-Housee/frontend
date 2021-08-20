@@ -69,6 +69,10 @@ export class CadastrarUsuarioComponent implements OnInit {
       setTimeout(() => {
         this.router.navigate(['/main']);
       }, 1000);
-    })
+    }, 
+    (err) => {
+      this.openSnackBar('Erro ao cadastrar');
+      console.log(err)
+    });
   }
 }
