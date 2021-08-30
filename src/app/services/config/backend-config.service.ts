@@ -104,4 +104,8 @@ export class BackendConfigService {
   public static sairPartida(cdPartida: number, cdUsuario: number) {
     return `${this.partidaUsuario(cdPartida, cdUsuario)}/exit`;
   }
+
+  public static updatePartidaStatus(cdPartida: number, dsStatus: string) {
+    return `${this.partidasPorId(cdPartida)}/status/${dsStatus}`;
+  }
 }

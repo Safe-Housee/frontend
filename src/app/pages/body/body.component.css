@@ -9,17 +9,16 @@
     display: flex;
     border-radius: 4px;
     height:20px; 
-    width:200px; 
+    width: 15vw; 
     margin: -20px -25px; 
     position:relative;
     top:80%; 
     left: 42%;
     justify-content: center;
     align-items: center;
-    font-family: fantasy;
     font-size: medium;
    
-  }
+}
 
 
 .control {

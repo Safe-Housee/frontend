@@ -6,6 +6,7 @@
       <h2 class="h2">Nome da Sala: {{ partida.nm_partida }}</h2>
       <h2 class="h2">Nível: {{ partida.ds_nivel }}</h2>
       <h2 class="h2">Jogadores: {{ partida.usuariosNaPartida }}/{{ partida.limiteUsuarios }}</h2>
+      <h2 class="h2">Status: {{ partida.ds_status }}</h2>
     </div>
     <div class="tablee">
     <div class="table-responsive-sm table-hover table-dark tabela">
@@ -28,8 +29,12 @@
       </div>
     </div>
     <div id="footer">
+      <button (click)="exit()" class="exitButton" mat-raised-button color="warn">
+        {{ isOwner ? 'Fechar partida' : 'Sair' }}
+      </button>
       <button (click)="back()" class="backButton" mat-raised-button>Voltar</button>
-      <button (click)="exit()" class="exitButton" mat-raised-button color="warn">Sair</button>
+      <button *ngIf="checkCanInit()" (click)="updateStatus('Iniciar')" class="backButton" mat-raised-button style="background-color: #158a00;">Iniciar partida</button>
+      <button *ngIf="checkCanClose()" (click)="updateStatus('Finalizar')" class="backButton" mat-raised-button color="warn">Finalizar partida</button>
     </div>
   </section>
 

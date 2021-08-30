@@ -10,10 +10,11 @@ export class HeaderComponent implements OnInit {
   constructor(private route: Router) { }
 
   ngOnInit(): void {
-    this.userName = sessionStorage.getItem('nmUsuario') || '';
+    
   }
 
   isLogged() {
+    this.userName = sessionStorage.getItem('nmUsuario') || '';
     if(sessionStorage.getItem('token')) {
       return true;
     } else {

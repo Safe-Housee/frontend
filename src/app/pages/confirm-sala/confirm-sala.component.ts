@@ -2,6 +2,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { SalasService } from 'src/app/services/salas/salas.service';
+import { partida } from 'src/app/utils/storage';
 
 @Component({
   selector: 'app-confirm-sala',
@@ -23,6 +24,7 @@ export class ConfirmSalaComponent implements OnInit {
   entrarPartida() {
     this.partidaService.entrarPartida(this.data.cdPartida, this.data.cdUsuario).subscribe(res => {
       this.route.navigate([`/salasdeespera/${this.data.cdPartida}`]);
+      partida.setPartida(this.data.cdPartida);
       this.close();
     },
     (error) => console.log(error));

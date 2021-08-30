@@ -34,7 +34,6 @@ export class SalaComponent implements OnInit {
   ngOnInit(): void {
     this.selectLoadMehod('default');
     this.iniciarFormulario();
-    console.log(partida.getPartida())
     if(partida.getPartida()) {
       this.salaDeEspera(Number(partida.getPartida()));
     }
@@ -88,7 +87,6 @@ export class SalaComponent implements OnInit {
 
   salaDeEspera(cdPartida: number) {
     this.route.navigate([`/salasdeespera/${cdPartida}`]);
-    partida.setPartida(cdPartida);
   }
 
   changeValue(event: any) {
