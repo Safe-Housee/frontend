@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
+import { VoteComponent } from 'src/app/components/vote/vote.component';
 import { statusPartida } from 'src/app/enums/statusPartida';
 import { SalasService } from 'src/app/services/salas/salas.service';
 import { partida, usuario } from 'src/app/utils/storage';
@@ -16,7 +18,8 @@ export class SalasdeesperaComponent implements OnInit {
     private route: ActivatedRoute, 
     private salaService: SalasService, 
     private _snackBar: MatSnackBar, 
-    private router: Router) { }
+    private router: Router,
+    public dialog: MatDialog) { }
 
   partida: any;
   cdPartida: number;
@@ -35,12 +38,13 @@ export class SalasdeesperaComponent implements OnInit {
         this.back();
       }
       this.checkIsOwner();
+      console.log(this.partida.cdJogador)
       const cdJogadores = this.partida.jogadores.map(jogador => jogador.cd_usuario);
       const cdJogador = usuario.getUsuario();
-      if (!cdJogadores.includes(cdJogador)){
-        partida.removerPartida();
-        this.back();
-      }
+      // if (!cdJogadores.includes(cdJogador)){
+      //   partida.removerPartida();
+      //   this.back();
+      // }
     });
   }
 
@@ -89,6 +93,7 @@ export class SalasdeesperaComponent implements OnInit {
     this.salaService.atualizarStatus(this.cdPartida, statusParaEnviar).subscribe(() => {
       this.openSnackBar(`Status da partida: ${status}`);
       this.loadPartida(this.cdPartida);
+      this.openVote();
     });
   }
 
@@ -111,6 +116,18 @@ export class SalasdeesperaComponent implements OnInit {
   openSnackBar(message: string, action = null) {
     this._snackBar.open(message, action, {
       duration: 2000
+    });
+  }
+
+  async openVote() {
+    const dialogRef = this.dialog.open(VoteComponent, {
+      height: '400px',
+      width: '90vw',
+      data: { jogadores: this.partida.jogadores }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
     });
   }
 

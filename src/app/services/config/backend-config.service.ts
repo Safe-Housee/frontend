@@ -108,4 +108,8 @@ export class BackendConfigService {
   public static updatePartidaStatus(cdPartida: number, dsStatus: string) {
     return `${this.partidasPorId(cdPartida)}/status/${dsStatus}`;
   }
+
+  public static avaliarUsuario(cdPartida: number, cdUsuario: number) {
+    return `${this.partidaUsuario(cdPartida, cdUsuario)}`
+  }
 }

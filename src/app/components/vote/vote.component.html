@@ -1,0 +1,23 @@
+<main>
+    <header>
+        <h2>
+            Avalie os outros jogadores...
+
+        </h2>
+    </header>
+    <div id="jogadores" >
+        <div class="jogador" *ngFor="let jogador of jogadores">
+            <h3>{{ jogador.nm_usuario }}</h3>
+            <p>{{ jogador.nm_nivel }}</p>
+            <div>
+                <button id="positivo" mat-mini-fab style="background-color: #158a00; color: white;" (click)="atualizarHonra('positiva')">
+                    <mat-icon>thumb_up</mat-icon>
+                </button>
+                &nbsp;
+                <button id="negativo" mat-mini-fab color="warn" (click)="atualizarHonra('negativa')">
+                    <mat-icon>thumb_down</mat-icon>
+                </button>
+            </div>
+        </div>
+    </div>
+</main>

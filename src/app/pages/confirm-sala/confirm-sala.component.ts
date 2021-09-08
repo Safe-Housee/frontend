@@ -21,13 +21,16 @@ export class ConfirmSalaComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  entrarPartida() {
-    this.partidaService.entrarPartida(this.data.cdPartida, this.data.cdUsuario).subscribe(res => {
+  async entrarPartida() {
+    try {
+      await this.partidaService.entrarPartida(this.data.cdPartida, this.data.cdUsuario).pipe().toPromise();
       this.route.navigate([`/salasdeespera/${this.data.cdPartida}`]);
       partida.setPartida(this.data.cdPartida);
       this.close();
-    },
-    (error) => console.log(error));
+    } catch(error) {
+      console.error(error)
+    }
+
   }
 
   close() {

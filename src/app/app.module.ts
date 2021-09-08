@@ -36,6 +36,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { AuthGuard } from './services/auth/auth.guard';
 import { AcademyComponent } from './pages/academy/academy.component';
 import { ConfirmSalaComponent } from './pages/confirm-sala/confirm-sala.component';
+import { VoteComponent } from './components/vote/vote.component';
 
 
 @NgModule({
@@ -53,7 +54,8 @@ import { ConfirmSalaComponent } from './pages/confirm-sala/confirm-sala.componen
     LoginComponent,
     AcademyComponent,
     ReportComponent,
-    ConfirmSalaComponent
+    ConfirmSalaComponent,
+    VoteComponent
   ],
   imports: [
     BrowserModule,
