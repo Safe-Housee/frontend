@@ -7,8 +7,8 @@ const setPartida = (cdPartida) => {
 
 const removerPartida = () => sessionStorage.removeItem('partidaAtual');
 
-const getPartida = () => sessionStorage.getItem('partidaAtual');
-const getUsuario = () => sessionStorage.getItem('cdUsuario');
+const getPartida = () => Number(sessionStorage.getItem('partidaAtual'));
+const getUsuario = () => Number(sessionStorage.getItem('cdUsuario'));
 const partida = {
     removerPartida,
     setPartida,

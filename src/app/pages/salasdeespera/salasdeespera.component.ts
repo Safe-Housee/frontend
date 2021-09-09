@@ -35,16 +35,16 @@ export class SalasdeesperaComponent implements OnInit {
       this.partida = res;
       if (res.ds_status === statusPartida.FINALIDA) {
         this.openSnackBar('Partida fechada, voltando para a lista de partidas...');
+        partida.removerPartida();
         this.back();
       }
       this.checkIsOwner();
-      console.log(this.partida.cdJogador)
       const cdJogadores = this.partida.jogadores.map(jogador => jogador.cd_usuario);
-      const cdJogador = usuario.getUsuario();
-      // if (!cdJogadores.includes(cdJogador)){
-      //   partida.removerPartida();
-      //   this.back();
-      // }
+      const cdJogador = Number(usuario.getUsuario());
+      if (!cdJogadores.includes(cdJogador)){
+        partida.removerPartida();
+        this.back();
+      }
     });
   }
 
@@ -55,7 +55,8 @@ export class SalasdeesperaComponent implements OnInit {
   async exit() {
     try {
       if(this.isOwner) {
-        this.clearMatch();
+        await this.clearMatch();
+        this.updateStatus('Finalizar', false);
       } else {
         this.salaService.sairDaPartida(this.cdPartida ,sessionStorage['cdUsuario']).subscribe(
           () => {
@@ -77,23 +78,26 @@ export class SalasdeesperaComponent implements OnInit {
     partida.removerPartida();
   }
     
-  updateStatus(status: string) {
+  updateStatus(status: string, openVote = true) {
     let statusParaEnviar: string;
     switch (status) {
       case 'Iniciar':
+        openVote = false;
         statusParaEnviar = statusPartida.ANDAMENTO;
         break;
       case 'Finalizar':
+        openVote = true;
         statusParaEnviar = statusPartida.FINALIDA;
         break;
       default:
+        openVote = false;
         statusParaEnviar = this.partida.ds_status;
         break;
     }
     this.salaService.atualizarStatus(this.cdPartida, statusParaEnviar).subscribe(() => {
       this.openSnackBar(`Status da partida: ${status}`);
       this.loadPartida(this.cdPartida);
-      this.openVote();
+      if (openVote) this.openVote();
     });
   }
 

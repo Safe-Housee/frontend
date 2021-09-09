@@ -5,7 +5,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { gameId } from 'src/app/enums/gameId';
 import { SalasService } from 'src/app/services/salas/salas.service';
-import { partida } from 'src/app/utils/storage';
+import { partida, usuario } from 'src/app/utils/storage';
 import { ConfirmSalaComponent } from '../confirm-sala/confirm-sala.component';
 
 @Component({
@@ -67,6 +67,10 @@ export class SalaComponent implements OnInit {
   }
 
   openDialog(cdPartida: number) {
+    const partida = this.partidas.find(partida => partida.cd_partida === cdPartida);
+    const donoPartida = partida.jogadores.find(jogador => jogador.donoPartida);
+    const cdUsuario = usuario.getUsuario();
+    if (donoPartida.cd_usuario === Number(cdUsuario)) return this.salaDeEspera(cdPartida);
     const dialogRef = this.dialog.open(ConfirmSalaComponent, {
       data: {
         cdPartida,
@@ -74,7 +78,7 @@ export class SalaComponent implements OnInit {
       }
     });
 
-    dialogRef.afterClosed().subscribe(result => {
+    dialogRef.afterClosed().subscribe(() => {
       this.salaDeEspera(cdPartida);
     });
   }

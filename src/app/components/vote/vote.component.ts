@@ -22,7 +22,7 @@ export class VoteComponent implements OnInit {
     private route: Router
   ) { 
     const cdUsuario = usuario.getUsuario();
-    const jogadores = data.jogadores.filter(jogador => jogador.cd_usuario !== cdUsuario);
+    const jogadores = data.jogadores.filter(jogador => jogador.cd_usuario !== Number(cdUsuario));
     this.jogadores = jogadores;
   }
 
