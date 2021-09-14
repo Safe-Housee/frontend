@@ -35,6 +35,9 @@
 .tablee {
   width: 100vw;
   height: 68vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
 }
 
 .tabela {

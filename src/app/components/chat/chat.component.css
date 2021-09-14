@@ -1,0 +1,57 @@
+main {
+    width: 39vw;
+    height: 55vh;
+    background-color: white;
+    margin-left: 40px;
+    border-radius: 12px;
+    padding: 13px;
+    display: flex;
+    flex-flow: column;
+    place-content: space-between;
+}
+
+#actions {
+    display: flex;
+    flex-direction: row;
+    place-content: space-between;
+}
+
+input {
+    width: 80%;
+    cursor: pointer;
+}
+
+#messages {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: darkcyan;
+    height: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    margin-top: 10px;
+    overflow-y: scroll;
+}
+
+.my-message {
+    background-color: darkgray;
+    padding: 4px;
+    border-radius: 5px;
+    width: fit-content;
+    height: fit-content;
+    margin-left: 87%;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+.other-message {
+    background-color: lightgreen;
+    padding: 4px;
+    border-radius: 5px;
+    width: fit-content;
+    height: fit-content;
+    margin-right: 70%;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
