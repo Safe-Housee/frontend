@@ -38,7 +38,14 @@ import { AcademyComponent } from './pages/academy/academy.component';
 import { ConfirmSalaComponent } from './pages/confirm-sala/confirm-sala.component';
 import { VoteComponent } from './components/vote/vote.component';
 import { ChatComponent } from './components/chat/chat.component';
+import { SocketIoConfig, SocketIoModule } from 'ngx-socket-io';
 
+const config: SocketIoConfig = { 
+  url: 'http://localhost:3333', 
+  options: { 
+    withCredentials: false,
+  } 
+};
 
 @NgModule({
   declarations: [
@@ -67,6 +74,7 @@ import { ChatComponent } from './components/chat/chat.component';
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    SocketIoModule.forRoot(config),
     //Materials imports
     MatGridListModule,
     MatListModule,

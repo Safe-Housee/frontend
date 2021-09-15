@@ -40,7 +40,7 @@ input {
     border-radius: 5px;
     width: fit-content;
     height: fit-content;
-    margin-left: 87%;
+    margin-left: 75%;
     margin-top: 3px;
     margin-bottom: 3px;
 }
@@ -54,4 +54,15 @@ input {
     margin-right: 70%;
     margin-top: 3px;
     margin-bottom: 3px;
+}
+
+#submit {
+    background-color: darkgray;
+    border-radius: 5px;
+    width: 33px;
+    height: 31px;
+    display: flex;
+    place-content: center;
+    align-items: center;
+    cursor: pointer;
 }

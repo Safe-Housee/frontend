@@ -3,19 +3,20 @@
         <strong>Chat</strong>
     </header>
     <div id="messages">
-        <span class="my-message">Oi gente</span>
-        <span class="other-message">eae</span>
-        <span class="other-message"> {{ cdPartida }}</span>
-        <span class="my-message">É essa partida mesmo</span>
-        <span class="other-message"> {{ cdPartida }}</span>
-        <span class="other-message"> {{ cdPartida }}</span>
-        <span class="my-message">É essa partida mesmo</span>
-        <span class="my-message">É essa partida mesmo</span>
-        <span class="my-message">É essa partida mesmo</span>
+        <span 
+            [class.my-message]="message.cdUsuario === cdUsuario"
+            [class.other-message]="!message.cdUsuario === cdUsuario"
+            *ngFor="let message of allMessage"
+        > 
+            <strong>
+                {{ message.nmUsuario }}
+            </strong>    
+         <br />{{ message.message }}
+        </span>
     </div>
     <div id="actions">
-        <input type="text" name="message" id="message" placeholder="Digite uma mensagem...">
-        <div id="submit">
+        <input type="text" name="message" id="message" placeholder="Digite uma mensagem..." [(ngModel)]="message" [value]="message" (keydown)="enterSend($event)">
+        <div id="submit" (click)="newMessage()">
             <mat-icon>send</mat-icon>
         </div>
     </div>

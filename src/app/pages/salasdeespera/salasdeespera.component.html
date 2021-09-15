@@ -27,7 +27,7 @@
         </table>
       </div>
 
-      <app-chat [cdPartida]="partida.cd_partida"></app-chat>
+      <app-chat [cdPartida]="partida.cd_partida" [isOwner]="isOwner"></app-chat>
     </div>
     <div id="footer">
       <button (click)="exit()" class="exitButton" mat-raised-button color="warn">

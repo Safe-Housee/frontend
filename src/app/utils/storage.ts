@@ -9,6 +9,7 @@ const removerPartida = () => sessionStorage.removeItem('partidaAtual');
 
 const getPartida = () => Number(sessionStorage.getItem('partidaAtual'));
 const getUsuario = () => Number(sessionStorage.getItem('cdUsuario'));
+const getNmUsuario = () => sessionStorage.getItem('nmUsuario');
 const partida = {
     removerPartida,
     setPartida,
@@ -16,7 +17,8 @@ const partida = {
 }
 
 const usuario = {
-    getUsuario
+    getUsuario,
+    getNmUsuario
 }
 
 export {
