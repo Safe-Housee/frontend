@@ -1,6 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { ApplicationRef, Component, Input, OnInit } from '@angular/core';
 import { Socket } from 'ngx-socket-io';
-import { map } from 'rxjs/operators';
 import { events } from 'src/app/enums/events';
 import { usuario } from 'src/app/utils/storage';
 
@@ -16,8 +15,8 @@ export class ChatComponent implements OnInit {
   allMessage = [];
   cdUsuario = usuario.getUsuario();
   name = usuario.getNmUsuario();
-  constructor(private socket: Socket) { 
-    
+  constructor(private socket: Socket, private appRef: ApplicationRef) { 
+    console.log(socket)
   }
 
   ngOnInit(): void {
@@ -36,7 +35,8 @@ export class ChatComponent implements OnInit {
   createMatch() {
     this.socket.emit(events.NEW_MATCH, {
       cdPartida: this.cdPartida,
-      cdDonoPartida: this.cdUsuario
+      cdDonoPartida: this.cdUsuario,
+      name: this.name
     });
     console.log('partida criada')
   }
@@ -57,6 +57,7 @@ export class ChatComponent implements OnInit {
       message: this.message,
       nmUsuario: this.name
     });
+    this.appRef.tick();
     this.message = '';
   }
 
