@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Socket } from 'ngx-socket-io';
 import { VoteComponent } from 'src/app/components/vote/vote.component';
+import { events } from 'src/app/enums/events';
 import { statusPartida } from 'src/app/enums/statusPartida';
 import { SalasService } from 'src/app/services/salas/salas.service';
 import { partida, usuario } from 'src/app/utils/storage';
@@ -19,11 +21,13 @@ export class SalasdeesperaComponent implements OnInit {
     private salaService: SalasService, 
     private _snackBar: MatSnackBar, 
     private router: Router,
-    public dialog: MatDialog) { }
+    public dialog: MatDialog,
+    private socket: Socket) { }
 
   partida: any;
   cdPartida: number;
   isOwner: boolean = false;
+  openVoteHasBeenCalled = false;
 
   ngOnInit(): void {
     this.cdPartida = parseInt(this.route.snapshot.paramMap.get('id'), 10);
@@ -31,9 +35,13 @@ export class SalasdeesperaComponent implements OnInit {
   }
 
   loadPartida(cdPartida: number) {
-    this.salaService.partidaPorId(cdPartida).subscribe(res => {
+    this.salaService.partidaPorId(cdPartida).subscribe(async res => {
       this.partida = res;
       if (res.ds_status === statusPartida.FINALIDA) {
+        if(!this.openVoteHasBeenCalled) {
+          this.openVote();
+          this.openVoteHasBeenCalled = true;
+        }
         this.openSnackBar('Partida fechada, voltando para a lista de partidas...');
         partida.removerPartida();
         this.back();
@@ -56,10 +64,11 @@ export class SalasdeesperaComponent implements OnInit {
     try {
       if(this.isOwner) {
         await this.clearMatch();
-        this.updateStatus('Finalizar', false);
+        this.updateStatus('Finalizar');
       } else {
         this.salaService.sairDaPartida(this.cdPartida ,sessionStorage['cdUsuario']).subscribe(
-          () => {
+          async () => {
+            this.exitMatch()
             partida.removerPartida();
             this.back();
           },
@@ -78,26 +87,23 @@ export class SalasdeesperaComponent implements OnInit {
     partida.removerPartida();
   }
     
-  updateStatus(status: string, openVote = true) {
+  updateStatus(status: string) {
     let statusParaEnviar: string;
     switch (status) {
       case 'Iniciar':
-        openVote = false;
         statusParaEnviar = statusPartida.ANDAMENTO;
         break;
       case 'Finalizar':
-        openVote = true;
         statusParaEnviar = statusPartida.FINALIDA;
         break;
       default:
-        openVote = false;
         statusParaEnviar = this.partida.ds_status;
         break;
     }
     this.salaService.atualizarStatus(this.cdPartida, statusParaEnviar).subscribe(() => {
       this.openSnackBar(`Status da partida: ${status}`);
+      this.updateMatch();
       this.loadPartida(this.cdPartida);
-      if (openVote) this.openVote();
     });
   }
 
@@ -123,7 +129,7 @@ export class SalasdeesperaComponent implements OnInit {
     });
   }
 
-  async openVote() {
+  openVote() {
     const dialogRef = this.dialog.open(VoteComponent, {
       height: '400px',
       width: '90vw',
@@ -135,4 +141,27 @@ export class SalasdeesperaComponent implements OnInit {
     });
   }
 
+  exitMatch() {
+    const cdUsuario = usuario.getUsuario()
+    this.socket.emit(events.LEFT_MATCH, {
+      cdPartida: this.cdPartida,
+      cdUsuario: cdUsuario,
+    });
+  }
+
+  closeMatch() {
+    const cdUsuario = usuario.getUsuario();
+    this.socket.emit(events.CLOSE_MATCH, {
+      cdPartida: this.cdPartida,
+      cdUsuario: cdUsuario,
+    });
+  }
+
+  updateMatch() {
+    const cdUsuario = usuario.getUsuario();
+    this.socket.emit(events.UPDATE_MATCH, {
+      cdPartida: this.cdPartida,
+      cdUsuario: cdUsuario,
+    });
+  }
 }

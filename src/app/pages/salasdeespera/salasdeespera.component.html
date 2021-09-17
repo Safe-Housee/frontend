@@ -27,12 +27,13 @@
         </table>
       </div>
 
-      <app-chat [cdPartida]="partida.cd_partida" [isOwner]="isOwner"></app-chat>
+      <app-chat (update)="loadPartida(cdPartida)" [cdPartida]="partida.cd_partida" [isOwner]="isOwner"></app-chat>
     </div>
     <div id="footer">
-      <button (click)="exit()" class="exitButton" mat-raised-button color="warn">
-        {{ isOwner ? 'Fechar partida' : 'Sair' }}
+      <button *ngIf="isOwner" (click)="exit()" class="exitButton" mat-raised-button color="warn">
+        Fechar partida
       </button>
+      <button *ngIf="!isOwner"  (click)="exit()" class="exitButton" mat-raised-button color="warn" >Sair</button>
       <button (click)="back()" class="backButton" mat-raised-button>Voltar</button>
       <button *ngIf="checkCanInit()" (click)="updateStatus('Iniciar')" class="backButton" mat-raised-button style="background-color: #158a00;">Iniciar partida</button>
       <button *ngIf="checkCanClose()" (click)="updateStatus('Finalizar')" class="backButton" mat-raised-button color="warn">Finalizar partida</button>

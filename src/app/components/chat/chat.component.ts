@@ -1,4 +1,4 @@
-import { ApplicationRef, Component, Input, OnInit } from '@angular/core';
+import { ApplicationRef, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Socket } from 'ngx-socket-io';
 import { events } from 'src/app/enums/events';
 import { usuario } from 'src/app/utils/storage';
@@ -15,8 +15,9 @@ export class ChatComponent implements OnInit {
   allMessage = [];
   cdUsuario = usuario.getUsuario();
   name = usuario.getNmUsuario();
+  @Output() update = new EventEmitter<any>();
+
   constructor(private socket: Socket, private appRef: ApplicationRef) { 
-    console.log(socket)
   }
 
   ngOnInit(): void {
@@ -74,27 +75,25 @@ export class ChatComponent implements OnInit {
 
   }
 
-  async allEvents() {
+  allEvents() {
     this.socket.fromEvent<any>(events.USER_ALREADY_ON_MATCH).pipe((data: any) => {
-      console.log(data);
-      data.subscribe(res => console.log(res));
-      console.log('fez tudo')
-      return data
-    });
-
-    this.socket.fromEvent<any>(events.ENTER_MATCH).pipe((data: any) => {
-      data.subscribe(res => console.log(res));
-      console.log('entrou na partida', data)
       return data
     });
 
     this.socket.fromEvent<any>(events.NEW_MESSAGE).pipe((data: any) => {
-      console.log(data)
       data.subscribe(res => {
         console.log(res)
         this.allMessage.push(res)
       });
       return data
     });
+
+    this.socket.fromEvent<any>(events.UPDATE_MATCH).pipe((data: any) => {
+      data.subscribe(() => {
+        this.update.emit();
+      })
+      return data
+    });
   }
+  
 }
