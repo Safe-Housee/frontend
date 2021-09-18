@@ -1,18 +1,29 @@
 <router-outlet></router-outlet>
 
-<div class="card" style="width: 18rem;">
-    <img class="card-img-top" src="..." alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    </div>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">Cras justo odio</li>
-      <li class="list-group-item">Dapibus ac facilisis in</li>
-      <li class="list-group-item">Vestibulum at eros</li>
-    </ul>
-    <div class="card-body">
-      <a href="#" class="card-link">Card link</a>
-      <a href="#" class="card-link">Another link</a>
-    </div>
-  </div>
+<main>
+  <section id="games" >
+    <mat-tab-group mat-align-tabs="center">
+      <mat-tab label="Counter-Strike: Global Offensive">
+        <div class="videos">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/X4lbt7rkz9o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </mat-tab>
+      <mat-tab label="League Of Legends">
+        <div class="videos">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/wMXanhLW10M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </mat-tab>
+      <mat-tab label="Tekken 7">
+        <div class="videos">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/PX6ZkYptVHc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>    
+        </div>
+      </mat-tab>
+      <mat-tab label="O que é Academy ?">
+        <div class="videos">
+          <p class="text-white">Academy é um espaço onde os jogadores podem encontrar conteúdos que possam o ajudar a evoluir no jogo.</p>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+  </section>
+
+</main>

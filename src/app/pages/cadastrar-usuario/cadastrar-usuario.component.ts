@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { ReportService } from 'src/app/services/report/report.service';
 import { UsuarioServiceService } from 'src/app/services/usuario/usuario-service.service';
 
 
@@ -17,11 +18,14 @@ export class CadastrarUsuarioComponent implements OnInit {
   showSenhaNotEqualMessage = false;
   showEmailNotEqualMessage = false;
   fileToUpload: File = null;
+  formData: FormData;
+  files: any;
 
   constructor(
     private userService: UsuarioServiceService, 
     private _snackBar: MatSnackBar,
-    private router: Router) { }
+    private router: Router,
+    private reportService: ReportService) { }
 
   ngOnInit(): void {
     this.criarUsuario = new FormGroup({
@@ -64,7 +68,12 @@ export class CadastrarUsuarioComponent implements OnInit {
 
   submit() {
     this.userService.criarUsuario(this.criarUsuario.value)
-    .subscribe(() => {
+    .subscribe((res) => {
+      if(this.files) {
+        this.reportService.salvarImagem('usuario', res.user.cd_usuario, this.formData).subscribe(
+          () => {},
+          () => this.openSnackBar('Erro ao salvar as imagens. Tente novamente'));
+      }
       this.openSnackBar('Usuário cadastrado', 'Ir para o inicio');
       setTimeout(() => {
         this.router.navigate(['/main']);
@@ -74,5 +83,15 @@ export class CadastrarUsuarioComponent implements OnInit {
       this.openSnackBar('Erro ao cadastrar');
       console.log(err)
     });
+  }
+
+  fileChange(event) {
+    const fileList: FileList = event.target.files;
+    if (fileList.length > 0) {
+      const file: File = fileList[0];
+      this.formData = new FormData();
+      this.formData.append('file', file, file.name);
+      this.files ++;
+    }
   }
 }

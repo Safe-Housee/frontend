@@ -15,6 +15,7 @@
   /* força ficar na mesma direção*/
   justify-content: space-between;
   /* coloca espaço entre todos os items que estão dentro da div na horizontal*/
+  padding-left: 16px;
 }
 
 .carregando {
@@ -61,4 +62,5 @@
   align-items: self-end;
   margin-left: 32px;
   justify-content: space-evenly;
+  padding-bottom: 23px;
 }

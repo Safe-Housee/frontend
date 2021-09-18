@@ -14,7 +14,7 @@
   /* direção de uma linha vai ficar na mesma direção*/
   flex-wrap: wrap;
   /* força ficar na mesma direção*/
-  justify-content: space-between;
+  justify-content: center;
   /* coloca espaço entre todos os items que estão dentro da div na horizontal*/
   margin-top: 55px;
 }
