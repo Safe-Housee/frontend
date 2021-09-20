@@ -17,4 +17,12 @@ export class ReportService {
   salvarImagem(context: string, id: number | string, payload: any) {;
     return this.http.post(BackendConfigService.uploadImage(context, id), payload, BackendConfigService.httpOptions(true));
   }
+
+  listarReportes(status = 'pendente') {
+    return this.http.get(BackendConfigService.listReport(), BackendConfigService.httpOptions());
+  }
+
+  getReport(id: number) {
+    return this.http.get(BackendConfigService.reportePorId(id), BackendConfigService.httpOptions());
+  }
 }

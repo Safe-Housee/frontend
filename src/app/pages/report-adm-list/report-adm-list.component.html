@@ -1,0 +1,33 @@
+<router-outlet></router-outlet>
+
+<main> 
+    <section id="reportList" >
+    <h1 class="text-white" >Reportes pendentes</h1>
+        <div *ngIf="reportes?.length">
+            <mat-card class="reporte" *ngFor="let reporte of reportes" (click)="goToReportPage(reporte.cd_reporte)">
+                <mat-card-title>
+                  Reportador: {{ reporte.reportador. nm_usuario }}
+                  -> 
+                  Reportado: {{ reporte.reportado. nm_usuario }}
+                </mat-card-title>
+              <mat-card-content>
+                <p>
+                  {{ reporte.ds_reporte }}
+                </p>
+              </mat-card-content>
+              <mat-card-actions>
+                <button mat-button>Ver reporte</button>
+              </mat-card-actions>
+            </mat-card>
+        </div>
+        <div *ngIf="!reportes?.length" style="text-align: -webkit-center; ">
+            <mat-progress-spinner
+            class="carregando"
+            color="primary"
+            mode="indeterminate"
+            value="50">
+          </mat-progress-spinner>
+        </div>
+
+    </section>
+</main>

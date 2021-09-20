@@ -34,6 +34,7 @@ export class LoginComponent implements OnInit {
       sessionStorage.setItem('cdUsuario', res.cdUsuario);
 
       this.usuarioService.getUsuario(res.cdUsuario).subscribe(res => {
+        sessionStorage.setItem('email', res.ds_email);
         sessionStorage.setItem('nmUsuario', res.nm_usuario);
         this.openSnackBar('Logado com sucesso', 'Ir para o inicio');
         this.router.navigate(['/main']);

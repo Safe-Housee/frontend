@@ -34,7 +34,7 @@ export class ReportComponent implements OnInit {
       (res) => {
         if(this.files) {
           this.reportService.salvarImagem('report', res.cd_reporte, this.formData).subscribe(
-            () => {},
+            () => this.openSnackBar('Imagens salvas.'),
             () => this.openSnackBar('Erro ao salvar as imagens. Tente novamente'));
         }
         this.openSnackBar('Reporte enviado com sucesso!', 'Ok');

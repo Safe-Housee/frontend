@@ -1,0 +1,25 @@
+<router-outlet></router-outlet>
+
+<main>
+    <mat-card id="report">
+        <div>
+            {{ reporte.ds_statusReporte }}
+        </div>
+        <p>{{ reporte.ds_reporte }}</p>
+        <span> {{ reporte.dt_reporte | date: 'dd/MM/yyyy' }}</span>
+    </mat-card>
+    <div id="usuarios">
+        <h3>Usuários envolvidos</h3>
+        <mat-card id="reportador">
+            <strong>Nickname:</strong> {{ reportador.nm_usuario }} <br />
+            <strong>Email:</strong> {{ reportador.ds_email }} <br />
+            <strong>Data de Nascimento:</strong> {{ reportador.dt_nascimento | date: 'dd/MM/yyyy' }}
+        </mat-card>
+        <mat-card id="reportado">
+            <strong>Nickname:</strong> {{ reportado.nm_usuario }} <br />
+            <strong>Email:</strong> {{ reportado.ds_email }} <br />
+            <strong>Data de Nascimento:</strong> {{ reportado.dt_nascimento | date: 'dd/MM/yyyy' }}
+        </mat-card>
+    </div>
+
+</main>

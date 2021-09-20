@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { usuario } from 'src/app/utils/storage';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -14,12 +15,18 @@ export class HeaderComponent implements OnInit {
   }
 
   isLogged() {
-    this.userName = sessionStorage.getItem('nmUsuario') || '';
+    this.userName = usuario.getNmUsuario() || '';
     if(sessionStorage.getItem('token')) {
       return true;
     } else {
       return false;
     }
+  }
+
+  showReportMenu(): boolean {
+    const email = usuario.getUserEmail();
+    const domain = email.split('@');
+    return domain[1] === "safehouse.com";
   }
 
   logout() {

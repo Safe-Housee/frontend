@@ -88,6 +88,14 @@ export class BackendConfigService {
     return `${this.backendUrl()}/reporte`;
   }
 
+  public static reportePorId(id: number) {
+    return `${this.reportes()}/${id}`;
+  }
+
+  public static listReport() {
+    return `${this.backendUrl()}/reportes`;
+  }
+
   public static getUsuario(cdUsuario: string | number) {
     return `${this.backendUrl()}/usuarios/${cdUsuario}`;
   }

@@ -12,6 +12,8 @@ import { CadastrarUsuarioComponent } from './pages/cadastrar-usuario/cadastrar-u
 import { AuthGuard } from './services/auth/auth.guard';
 import { LoginComponent } from './pages/login/login.component';
 import { AcademyComponent } from './pages/academy/academy.component';
+import { ReportAdmListComponent } from './pages/report-adm-list/report-adm-list.component';
+import { ReportAdmComponent } from './pages/report-adm/report-adm.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'main', pathMatch: 'full'},
@@ -26,6 +28,8 @@ const routes: Routes = [
       { path: 'doacao', component: DoacaoComponent },
       { path: 'sala', component: SalaComponent, canActivate: [AuthGuard] },
       { path: 'salasdeespera/:id', component: SalasdeesperaComponent, canActivate: [AuthGuard] },
+      { path: 'reportList', component: ReportAdmListComponent, canActivate: [AuthGuard] },
+      { path: 'reportAdm/:id', component: ReportAdmComponent, canActivate: [AuthGuard] },
       { path: 'academy', component: AcademyComponent, canActivate: [AuthGuard] }
     ]
   },

@@ -40,6 +40,8 @@ import { ConfirmSalaComponent } from './pages/confirm-sala/confirm-sala.componen
 import { VoteComponent } from './components/vote/vote.component';
 import { ChatComponent } from './components/chat/chat.component';
 import { SocketIoConfig, SocketIoModule } from 'ngx-socket-io';
+import { ReportAdmListComponent } from './pages/report-adm-list/report-adm-list.component';
+import { ReportAdmComponent } from './pages/report-adm/report-adm.component';
 
 const config: SocketIoConfig = { 
   url: 'http://localhost:3333', 
@@ -65,7 +67,9 @@ const config: SocketIoConfig = {
     ReportComponent,
     ConfirmSalaComponent,
     VoteComponent,
-    ChatComponent
+    ChatComponent,
+    ReportAdmListComponent,
+    ReportAdmComponent
   ],
   imports: [
     BrowserModule,

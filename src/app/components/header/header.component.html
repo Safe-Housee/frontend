@@ -41,8 +41,12 @@
         <li *ngIf="isLogged()" class="nav-item">
           <a class="nav-link" [routerLink]="['academy']">Academy<span class="sr-only">(current)</span></a>
         </li>
+
+        <li *ngIf="isLogged() && showReportMenu()" class="nav-item">
+          <a class="nav-link" [routerLink]="['reportList']">Reportes (adm)<span class="sr-only">(current)</span></a>
+        </li>
         
-        <li *ngIf="isLogged()" id="logged" class="nav-item text-white" >Usuario logado: {{ userName }}</li>
+        <li *ngIf="isLogged()" id="logged" class="nav-item text-white" >Usuario: {{ userName }}</li>
 
       </ul>
     </div>
