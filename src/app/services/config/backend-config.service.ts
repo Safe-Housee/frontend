@@ -104,7 +104,6 @@ export class BackendConfigService {
     return `${this.backendUrl()}/uploadImage?context=${context}&id=${id}`;
   }
 
-
   public static partidaUsuario(cdPartida: number, cdUsuario: number) {
     return `${this.partidasPorId(cdPartida)}/usuario/${cdUsuario}`;
   }
@@ -119,5 +118,13 @@ export class BackendConfigService {
 
   public static avaliarUsuario(cdPartida: number, cdUsuario: number) {
     return `${this.partidaUsuario(cdPartida, cdUsuario)}`
+  }
+
+  public static avaliarUsuarioDireto(cdUsuario: number) {
+    return `${this.backendUrl()}/usuario/${cdUsuario}/avaliacao`;
+  }
+
+  public static blockUser(cdUsuario: number) {
+    return `${this.criarUsuario()}/${cdUsuario}/block`;
   }
 }

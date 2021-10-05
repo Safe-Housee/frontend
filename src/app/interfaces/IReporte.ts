@@ -6,4 +6,5 @@ export interface IReporte {
     ds_reporte: string;
     ds_statusReporte: string;
     dt_reporte: string;
+    arquivos: string[] | []
 }

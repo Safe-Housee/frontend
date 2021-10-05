@@ -25,4 +25,9 @@ export class ReportService {
   getReport(id: number) {
     return this.http.get(BackendConfigService.reportePorId(id), BackendConfigService.httpOptions());
   }
+
+  atualizarReporte(cdReporte: number, status: string) {
+    const body = { status }
+    return this.http.patch(BackendConfigService.reportePorId(cdReporte), body, BackendConfigService.httpOptions());
+  }
 }

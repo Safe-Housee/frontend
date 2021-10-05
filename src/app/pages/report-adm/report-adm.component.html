@@ -1,25 +1,59 @@
 <router-outlet></router-outlet>
 
-<main>
+<main *ngIf="reportado && reportador && reporte">
     <mat-card id="report">
         <div>
-            {{ reporte.ds_statusReporte }}
+            <strong>Status: </strong> {{ status(reporte.ds_statusReporte) }}
         </div>
-        <p>{{ reporte.ds_reporte }}</p>
-        <span> {{ reporte.dt_reporte | date: 'dd/MM/yyyy' }}</span>
+        <article id="description">
+            <h3>
+                <strong>Motivo:</strong>
+            </h3>
+            <p>{{ reporte.ds_reporte }}</p>
+        </article>
+        <span> 
+           <strong>Reporte enviado no dia:</strong>  
+           {{ reporte.dt_reporte | date: 'dd/MM/yyyy' }}
+        </span>
     </mat-card>
-    <div id="usuarios">
-        <h3>Usuários envolvidos</h3>
+
+    <article id="usuarios">
+        <h3 id="userTitle">Usuários envolvidos</h3>
         <mat-card id="reportador">
+            <h2>
+                <strong>Reportador</strong>
+            </h2>
             <strong>Nickname:</strong> {{ reportador.nm_usuario }} <br />
             <strong>Email:</strong> {{ reportador.ds_email }} <br />
             <strong>Data de Nascimento:</strong> {{ reportador.dt_nascimento | date: 'dd/MM/yyyy' }}
         </mat-card>
         <mat-card id="reportado">
+            <h2>
+                <strong>Reportado</strong>
+            </h2>
             <strong>Nickname:</strong> {{ reportado.nm_usuario }} <br />
             <strong>Email:</strong> {{ reportado.ds_email }} <br />
             <strong>Data de Nascimento:</strong> {{ reportado.dt_nascimento | date: 'dd/MM/yyyy' }}
         </mat-card>
-    </div>
+    </article>
+
+    <article id="images" *ngIf="reporte?.arquivos?.length">
+        <img class="reportImage" *ngFor="let image of reporte.arquivos" [src]="base64ToImage(image)" alt="">
+    </article>
+
+    <article id="buttons">
+        <button mat-raised-button color="warn" (click)="updateBlockStatus()">
+            {{ reportado.ic_bloqueado ? 'Desbloquear' : 'Bloquear' }} {{ reportado.nm_usuario }}
+        </button>
+        <button mat-raised-button color="primary" (click)="updateHonra(reportado.cd_usuario, 'negativa')">
+            Tirar uma honra do {{ reportado.nm_usuario }}
+        </button>
+        <button mat-raised-button color="primary" (click)="updateHonra(reportador.cd_usuario, 'negativa')">
+            Tirar uma honra do {{ reportador.nm_usuario }}
+        </button>
+        <button mat-raised-button color="accent" (click)="alterarStatus()">
+            {{ reporte.ds_statusReporte === 'pendente' ? 'Fechar': 'Abrir' }} reporte
+        </button>
+    </article>
 
 </main>

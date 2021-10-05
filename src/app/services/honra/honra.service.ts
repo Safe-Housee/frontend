@@ -11,9 +11,21 @@ export class HonraService {
   constructor(private http: HttpClient) { }
 
   avaliar(cdPartida: number, cdUsuario: number, avaliacao: string): Observable<any> {
-      const body = {
-          avaliacao: avaliacao
-      }
+    const body = {
+        avaliacao: avaliacao
+    }
     return this.http.post(BackendConfigService.avaliarUsuario(cdPartida, cdUsuario), body, BackendConfigService.httpOptions());
   }
+  
+  avaliarUsuario(cdUsuario: number, avaliacao: string): Observable<any> {
+    const body = {
+      avaliacao: avaliacao
+    }
+    return this.http.post(BackendConfigService.avaliarUsuarioDireto(cdUsuario), body, BackendConfigService.httpOptions());
+  }
+
+  updateBlock(cdUsuario: number) {
+    return this.http.patch(BackendConfigService.blockUser(cdUsuario), null, BackendConfigService.httpOptions());
+  }
+
 }
