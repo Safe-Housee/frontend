@@ -29,18 +29,23 @@ export class LoginComponent implements OnInit {
       email: this.login.value.email,
       senha: this.login.value.senha
     }
-    this.usuarioService.login(payload).subscribe(res => {
-      sessionStorage.setItem('token', String(res.token)) ;
-      sessionStorage.setItem('cdUsuario', res.cdUsuario);
-
-      this.usuarioService.getUsuario(res.cdUsuario).subscribe(res => {
+    this.usuarioService.login(payload).subscribe(resLogin => {
+      sessionStorage.setItem('token', String(resLogin.token)) ;
+      this.usuarioService.getUsuario(resLogin.cdUsuario).subscribe(res => {
+        sessionStorage.setItem('cdUsuario', res.cdUsuario);
         sessionStorage.setItem('email', res.ds_email);
         sessionStorage.setItem('nmUsuario', res.nm_usuario);
         this.openSnackBar('Logado com sucesso', 'Ir para o inicio');
         this.router.navigate(['/main']);
+      },
+      (errGetUser) => {
+        console.error(errGetUser)
+        if(errGetUser.error.message === 'Você está bloqueado, espere até que seje desbloqueado') {
+          this.router.navigate(['/block']);
+        }
       });
     }, (err) => {
-      console.log(err);
+      console.error(err);
       this.openSnackBar('Erro ao logar, tente novamente', 'Ir para o inicio');
     });
   }

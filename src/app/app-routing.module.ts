@@ -14,6 +14,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { AcademyComponent } from './pages/academy/academy.component';
 import { ReportAdmListComponent } from './pages/report-adm-list/report-adm-list.component';
 import { ReportAdmComponent } from './pages/report-adm/report-adm.component';
+import { BlockWarningComponent } from './pages/block-warning/block-warning.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'main', pathMatch: 'full'},
@@ -24,8 +25,9 @@ const routes: Routes = [
       { path: 'main', component: MainComponent },
       { path: 'cadastro', component: CadastrarUsuarioComponent },
       { path: 'login', component: LoginComponent },
-      { path: 'report', component: ReportComponent, canActivate: [AuthGuard] },
       { path: 'doacao', component: DoacaoComponent },
+      { path: 'block', component: BlockWarningComponent },
+      { path: 'report', component: ReportComponent, canActivate: [AuthGuard] },
       { path: 'sala', component: SalaComponent, canActivate: [AuthGuard] },
       { path: 'salasdeespera/:id', component: SalasdeesperaComponent, canActivate: [AuthGuard] },
       { path: 'reportList', component: ReportAdmListComponent, canActivate: [AuthGuard] },

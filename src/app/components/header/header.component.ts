@@ -16,7 +16,7 @@ export class HeaderComponent implements OnInit {
 
   isLogged() {
     this.userName = usuario.getNmUsuario() || '';
-    if(sessionStorage.getItem('token')) {
+    if(sessionStorage.getItem('token') && sessionStorage.getItem('cdUsuario')) {
       return true;
     } else {
       return false;
@@ -25,8 +25,12 @@ export class HeaderComponent implements OnInit {
 
   showReportMenu(): boolean {
     const email = usuario.getUserEmail();
-    const domain = email.split('@');
-    return domain[1] === "safehouse.com";
+    if(email) {
+      const domain = email.split('@');
+      return domain[1] === "safehouse.com";
+    } else {
+      return false;
+    }
   }
 
   logout() {

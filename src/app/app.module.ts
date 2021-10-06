@@ -42,6 +42,7 @@ import { ChatComponent } from './components/chat/chat.component';
 import { SocketIoConfig, SocketIoModule } from 'ngx-socket-io';
 import { ReportAdmListComponent } from './pages/report-adm-list/report-adm-list.component';
 import { ReportAdmComponent } from './pages/report-adm/report-adm.component';
+import { BlockWarningComponent } from './pages/block-warning/block-warning.component';
 
 const config: SocketIoConfig = { 
   url: 'http://localhost:3333', 
@@ -69,7 +70,8 @@ const config: SocketIoConfig = {
     VoteComponent,
     ChatComponent,
     ReportAdmListComponent,
-    ReportAdmComponent
+    ReportAdmComponent,
+    BlockWarningComponent
   ],
   imports: [
     BrowserModule,
