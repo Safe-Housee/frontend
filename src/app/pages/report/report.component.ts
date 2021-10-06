@@ -13,8 +13,8 @@ import { ReportService } from 'src/app/services/report/report.service';
 export class ReportComponent implements OnInit {
 
   criarReport: any;
-  formData: FormData;
-  files: number = 0;
+  formData: Array<FormData> = [];
+  haveFile: boolean = false;
 
   constructor(
     private reportService: ReportService,
@@ -31,11 +31,20 @@ export class ReportComponent implements OnInit {
 
   submit() {
     this.reportService.criarReporte(this.criarReport.value).subscribe(
-      (res) => {
-        if(this.files) {
-          this.reportService.salvarImagem('report', res.cd_reporte, this.formData).subscribe(
-            () => this.openSnackBar('Imagens salvas.'),
-            () => this.openSnackBar('Erro ao salvar as imagens. Tente novamente'));
+      async (res) => {
+        if(this.haveFile) {
+          const filesPromise = [];
+          this.formData.forEach(file => {
+            filesPromise.push(
+              this.reportService.salvarImagem('report', res.cd_reporte, file).pipe().toPromise()
+              .then(() => this.openSnackBar('Imagens salvas.'))
+              .catch(() => this.openSnackBar('Erro ao salvar as imagens. Tente novamente'))
+            );
+          });
+          Promise.all(filesPromise);
+          // this.reportService.salvarImagem('report', res.cd_reporte, this.formData).subscribe(
+          //   () => this.openSnackBar('Imagens salvas.'),
+          //   () => this.openSnackBar('Erro ao salvar as imagens. Tente novamente'));
         }
         this.openSnackBar('Reporte enviado com sucesso!', 'Ok');
         setTimeout(() => {
@@ -53,11 +62,16 @@ export class ReportComponent implements OnInit {
 
   fileChange(event) {
     const fileList: FileList = event.target.files;
+    console.log(fileList)
     if (fileList.length > 0) {
-      const file: File = fileList[0];
-      this.formData = new FormData();
-      this.formData.append('file', file, file.name);
-      this.files ++;
+      this.haveFile = true;
+      for (let index = 0; index < fileList.length; index++) {
+        const file = fileList.item(index);
+        console.log(file)
+        this.formData[index] = new FormData();
+        this.formData[index].append('file', file, file.name);
+      }
+
     }
   }
 }

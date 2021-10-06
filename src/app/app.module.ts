@@ -43,6 +43,7 @@ import { SocketIoConfig, SocketIoModule } from 'ngx-socket-io';
 import { ReportAdmListComponent } from './pages/report-adm-list/report-adm-list.component';
 import { ReportAdmComponent } from './pages/report-adm/report-adm.component';
 import { BlockWarningComponent } from './pages/block-warning/block-warning.component';
+import { ImageViewerComponent } from './components/image-viewer/image-viewer.component';
 
 const config: SocketIoConfig = { 
   url: 'http://localhost:3333', 
@@ -71,7 +72,8 @@ const config: SocketIoConfig = {
     ChatComponent,
     ReportAdmListComponent,
     ReportAdmComponent,
-    BlockWarningComponent
+    BlockWarningComponent,
+    ImageViewerComponent
   ],
   imports: [
     BrowserModule,

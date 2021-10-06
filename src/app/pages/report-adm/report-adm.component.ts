@@ -7,6 +7,9 @@ import { UsuarioServiceService } from 'src/app/services/usuario/usuario-service.
 import { HonraService } from 'src/app/services/honra/honra.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { statusReporte } from 'src/app/enums/statusReport';
+import Viewer from 'viewerjs';
+import { MatDialog } from '@angular/material/dialog';
+import { ImageViewerComponent } from 'src/app/components/image-viewer/image-viewer.component';
 
 @Component({
   selector: 'app-report-adm',
@@ -25,7 +28,8 @@ export class ReportAdmComponent implements OnInit {
     private userService: UsuarioServiceService,
     private _sanitizer: DomSanitizer,
     private honraService: HonraService,
-    private _snackBar: MatSnackBar
+    private _snackBar: MatSnackBar,
+    public dialog: MatDialog
   ) { }
 
   ngOnInit(): void {
@@ -105,5 +109,11 @@ export class ReportAdmComponent implements OnInit {
         console.error(error);
       }
     )
+  }
+
+  setFullPageImage(image) {
+    this.dialog.open(ImageViewerComponent, {
+      data: image
+    })
   }
 }

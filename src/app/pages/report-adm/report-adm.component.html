@@ -38,7 +38,7 @@
     </article>
 
     <article id="images" *ngIf="reporte?.arquivos?.length">
-        <img class="reportImage" *ngFor="let image of reporte.arquivos" [src]="base64ToImage(image)" alt="">
+        <img class="reportImage" *ngFor="let image of reporte.arquivos" [src]="base64ToImage(image)" alt="" (click)="setFullPageImage(image)">
     </article>
 
     <article id="buttons">
