@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
     this.usuarioService.login(payload).subscribe(resLogin => {
       sessionStorage.setItem('token', String(resLogin.token)) ;
       this.usuarioService.getUsuario(resLogin.cdUsuario).subscribe(res => {
-        sessionStorage.setItem('cdUsuario', res.cdUsuario);
+        sessionStorage.setItem('cdUsuario', resLogin.cdUsuario);
         sessionStorage.setItem('email', res.ds_email);
         sessionStorage.setItem('nmUsuario', res.nm_usuario);
         this.openSnackBar('Logado com sucesso', 'Ir para o inicio');

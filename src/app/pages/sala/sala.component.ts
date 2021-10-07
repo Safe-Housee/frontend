@@ -43,7 +43,7 @@ export class SalaComponent implements OnInit {
     this.partidaForm = new FormGroup({
       cd_jogo: new FormControl(null, [Validators.required]),
       nm_partida: new FormControl(null, [Validators.required]),
-      cd_usuario: new FormControl(sessionStorage['cdUsuario'], [Validators.required]),
+      cd_usuario: new FormControl(usuario.getUsuario(), [Validators.required]),
       ds_nivel: new FormControl(null, [Validators.required])
     });
   }
