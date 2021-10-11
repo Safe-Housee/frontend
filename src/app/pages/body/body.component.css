@@ -55,7 +55,7 @@
   }
   
   .safehouse {
-    width: 57%;
+    width: 60%;
     height: 50%;
     text-align: center;
     background: url("/assets/img/safehouse.png");
@@ -70,6 +70,7 @@
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
+    z-index: 1;
   }
   
   .control2 {
