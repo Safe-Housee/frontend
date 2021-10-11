@@ -12,6 +12,7 @@ import { UsuarioServiceService } from 'src/app/services/usuario/usuario-service.
 export class LoginComponent implements OnInit {
   login: any;
   hide = true;
+  timeUntilUnblock: any;
   constructor(private usuarioService: UsuarioServiceService, private _snackBar: MatSnackBar, private router: Router) { 
     
   }
@@ -42,6 +43,9 @@ export class LoginComponent implements OnInit {
         console.error(errGetUser)
         if(errGetUser.error.message === 'Você está bloqueado, espere até que seje desbloqueado') {
           this.router.navigate(['/block']);
+        }
+        if(errGetUser.error.message === 'Usuário bloqueado temporariamente') {
+          this.timeUntilUnblock = errGetUser.error.time;
         }
       });
     }, (err) => {

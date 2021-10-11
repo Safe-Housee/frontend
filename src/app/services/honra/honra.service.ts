@@ -24,8 +24,8 @@ export class HonraService {
     return this.http.post(BackendConfigService.avaliarUsuarioDireto(cdUsuario), body, BackendConfigService.httpOptions());
   }
 
-  updateBlock(cdUsuario: number) {
-    return this.http.patch(BackendConfigService.blockUser(cdUsuario), null, BackendConfigService.httpOptions());
+  updateBlock(cdUsuario: number, payload?: any) {
+    return this.http.patch(BackendConfigService.blockUser(cdUsuario), payload, BackendConfigService.httpOptions());
   }
 
 }

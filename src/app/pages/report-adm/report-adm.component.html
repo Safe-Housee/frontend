@@ -33,7 +33,8 @@
             </h2>
             <strong>Nickname:</strong> {{ reportado.nm_usuario }} <br />
             <strong>Email:</strong> {{ reportado.ds_email }} <br />
-            <strong>Data de Nascimento:</strong> {{ reportado.dt_nascimento | date: 'dd/MM/yyyy' }}
+            <strong>Data de Nascimento:</strong> {{ reportado.dt_nascimento | date: 'dd/MM/yyyy' }} <br />
+            <strong *ngIf="reportado.tempBlock">Usuário bloqueado até o dia:</strong> {{ reportado.dt_desbloqueio | date: 'dd/MM/yyyy' }}
         </mat-card>
     </article>
 
@@ -42,8 +43,11 @@
     </article>
 
     <article id="buttons">
-        <button mat-raised-button color="warn" (click)="updateBlockStatus()">
-            {{ reportado.ic_bloqueado ? 'Desbloquear' : 'Bloquear' }} {{ reportado.nm_usuario }}
+        <button mat-raised-button color="warn" (click)="updateBlockStatus(false)">
+            {{ reportado.ic_bloqueado ? 'Desbloquear' : 'Bloquear ' + reportado.nm_usuario + ' por tempo indeterminado' }}
+        </button>
+        <button mat-raised-button color="warn" (click)="updateBlockStatus(true)" [disabled]="reportado.tempBlock">
+            {{ 'Bloquear ' + reportado.nm_usuario + ' por 7 dias' }}
         </button>
         <button mat-raised-button color="primary" (click)="updateHonra(reportado.cd_usuario, 'negativa')">
             Tirar uma honra do {{ reportado.nm_usuario }}

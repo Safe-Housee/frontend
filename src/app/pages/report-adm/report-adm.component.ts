@@ -46,6 +46,8 @@ export class ReportAdmComponent implements OnInit {
     this.reportService.getReport(cdReporte).subscribe((res: any) => {
       this.reporte = res;
       this.reportado = res.reportado[0];
+      const actualDate = new Date().getTime()
+      this.reportado.tempBlock = actualDate < this.reportado.dt_desbloqueio
       this.reportador = res.reportador[0];
       console.log(res)
     });
@@ -81,8 +83,14 @@ export class ReportAdmComponent implements OnInit {
     });
   }
 
-  updateBlockStatus(): void {
-    this.honraService.updateBlock(this.reportado.cd_usuario).subscribe(
+  updateBlockStatus(isTemp: boolean): void {
+    let payload;
+    if(isTemp) {
+      const dateAux = new Date();
+      const date = new Date(dateAux.getFullYear(), dateAux.getMonth() + 1, dateAux.getDate() + 7);
+      payload = { blockDate: date.getTime() }
+    }
+    this.honraService.updateBlock(this.reportado.cd_usuario, payload).subscribe(
       () => {
         this.openSnackBar('Status atualizado!');
         this.getReportInfo(this.cdReporte);
