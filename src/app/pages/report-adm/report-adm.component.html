@@ -47,7 +47,7 @@
             {{ reportado.ic_bloqueado ? 'Desbloquear' : 'Bloquear ' + reportado.nm_usuario + ' por tempo indeterminado' }}
         </button>
         <button mat-raised-button color="warn" (click)="updateBlockStatus(true)" [disabled]="reportado.tempBlock">
-            {{ 'Bloquear ' + reportado.nm_usuario + ' por 7 dias' }}
+            {{ 'Bloquear ' + reportado.nm_usuario + ' temporariamente' }}
         </button>
         <button mat-raised-button color="primary" (click)="updateHonra(reportado.cd_usuario, 'negativa')">
             Tirar uma honra do {{ reportado.nm_usuario }}

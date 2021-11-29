@@ -2,28 +2,7 @@
     <img id="img-fluid" src="/assets/img/florian.jpg" />
     <mat-card id="fundo">
         <section id="fotoUsuario">
-        <h1 class="text-white">Cadastre-se</h1>
-
-            <!-- <div id="imageUser">
-                <mat-card-subtitle>
-                    <strong>
-                        Escolha o arquivo da foto de perfil
-                    </strong>
-                </mat-card-subtitle>
-                <br />
-                <input type="file" name="profile" id="profile" (change)="fileChange($event.target.files)">
-            </div>
-            <div id="aviso">
-                <mat-card-subtitle id="titleImage">
-                    <strong>
-                        Escolha a sua foto de perfil
-                    </strong>
-                </mat-card-subtitle>
-                <p id="alertImage" class="text">
-                    Esteja ciente de que a sua foto de perfil será vista por inúmeras pessoas. <br/>
-                    Uma foto que contenha qualquer tipo conteudo racista/sexista/xenofobico fara a sua conta ser bánida.
-                </p>
-            </div> -->
+            <h1 class="text-white">Cadastre-se</h1>
         </section>
         <form [formGroup]="criarUsuario">
             <mat-form-field appearance="legacy" id="nameInput" class="input">
@@ -57,11 +36,6 @@
                     <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                         <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
                     </button>
-            </mat-form-field>
-
-            <mat-form-field appearance="legacy" id="telefoneInput" class="input">
-                <mat-label>Telefone</mat-label>
-                <input matInput placeholder="Digite o telefone" formControlName="cd_telefone">
             </mat-form-field>
 
             <mat-form-field appearance="legacy" id="dataInput" class="input">

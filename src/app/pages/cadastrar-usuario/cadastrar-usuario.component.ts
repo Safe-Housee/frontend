@@ -31,7 +31,7 @@ export class CadastrarUsuarioComponent implements OnInit {
     this.criarUsuario = new FormGroup({
       ds_email: new FormControl('', [Validators.required, Validators.email]),
       ds_emailConfirmation: new FormControl('', [Validators.required, Validators.email]),
-      cd_telefone: new FormControl('', [Validators.required]),
+      cd_telefone: new FormControl('40028922', [Validators.required]),
       nm_usuario: new FormControl('', [Validators.required]),
       cd_senha: new FormControl('', [Validators.required]),
       dt_nascimento: new FormControl('', [Validators.required]),
