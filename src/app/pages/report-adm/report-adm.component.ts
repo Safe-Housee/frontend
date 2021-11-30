@@ -61,6 +61,8 @@ export class ReportAdmComponent implements OnInit {
     switch(status) {
       case 'pendente':
         return 'Pendente';
+      case 'finalizado':
+        return 'Finalizado'
       default:
         return ''
     }
