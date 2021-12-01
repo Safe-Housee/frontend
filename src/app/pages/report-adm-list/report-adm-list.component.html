@@ -3,7 +3,7 @@
 <main> 
     <section id="reportList" >
     <h1 class="text-white" >Reportes pendentes</h1>
-        <div *ngIf="reportes?.length">
+        <div *ngIf="reportes?.length && !loading">
             <mat-card class="reporte" *ngFor="let reporte of reportes" (click)="goToReportPage(reporte.cd_reporte)">
                 <mat-card-title>
                   Reportador: {{ reporte.reportador. nm_usuario }}
@@ -20,13 +20,16 @@
               </mat-card-actions>
             </mat-card>
         </div>
-        <div *ngIf="!reportes?.length" style="text-align: -webkit-center; ">
+        <div *ngIf="loading" style="text-align: -webkit-center; ">
             <mat-progress-spinner
             class="carregando"
             color="primary"
             mode="indeterminate"
             value="50">
           </mat-progress-spinner>
+        </div>
+        <div *ngIf="!loading && !reportes?.length">
+          <p style="text-align: -webkit-center; color: white;">Nenhum reporte encotrado</p>
         </div>
 
     </section>

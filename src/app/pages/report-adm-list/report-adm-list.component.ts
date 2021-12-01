@@ -11,6 +11,7 @@ import { UsuarioServiceService } from 'src/app/services/usuario/usuario-service.
 })
 export class ReportAdmListComponent implements OnInit {
   reportes: Array<IReporte>
+  loading = true;
 
   constructor(
     private reportService: ReportService, 
@@ -33,7 +34,9 @@ export class ReportAdmListComponent implements OnInit {
       }
       console.log(tempArrayOfCompleteReport)
       this.reportes = tempArrayOfCompleteReport;
-      
+      setTimeout(() => {
+        this.loading = false;
+      },1000)
     });
   }
 
