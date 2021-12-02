@@ -1,49 +1,53 @@
-# Instruções
+# Safehouse
 
+
+### Tecnologias
+
+* Esse projeto foi criado usando Angular v11
+
+### Depêndencias
+
+* Node >= 12
 ### Como rodar 
 
-Executar o comando 
+1. Clone o repositório
+
+```
+$ git clone https://github.com/Safe-Housee/frontend.git
+```
+
+2. Instale as depedências
+
+Rode o comando abaixo dentro da pasta do projeto
 
 ```
 $ npm install
 ```
-dentro da pasta do projeto
+3. Rode o projeto
 
 Comando para rodar o projeto localmente.
 
 ```
 $ npm start
 ```
-
+A aplicação estará disponivel na url `http://localhost:4200/`
 ### Para rodar os testes 
 
+Rode o comando abaixo dentro da pasta do projeto
 ```
 $ npm t
 ```
-# Safehouse
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.4.
+### Para fazer o build
 
-## Development server
+Rode o comando abaixo dentro da pasta do projeto
+```
+$ npm run build
+```
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Colaboradores 
 
-## Code scaffolding
+[<img src="https://media-exp1.licdn.com/dms/image/D4D35AQF_CFQEmDWONQ/profile-framedphoto-shrink_800_800/0/1632754930758?e=1638550800&v=beta&t=AFJonuRvg1gdEGrHvrW8os-cd-822mhLDITzXDDL3tY" width=115 > <br> <sub> Matheus Lopes </sub>](https://www.linkedin.com/in/matheuslopes95b93bb499/) | [<img src="https://media-exp1.licdn.com/dms/image/C4E03AQEhYEuXoJCKyQ/profile-displayphoto-shrink_800_800/0/1598641124733?e=1643846400&v=beta&t=BTXkD07TMItzbjkkQrs-zbcy_QK6aO--2cVV5SScylU" width=115 > <br> <sub> Cristian Silva </sub>](https://www.linkedin.com/in/cristian-silva-dev/) | [<img src="https://media-exp1.licdn.com/dms/image/D4D35AQHj35q286mIzw/profile-framedphoto-shrink_800_800/0/1634910523502?e=1638550800&v=beta&t=bfzr2rreWdIYw1PeCguX1a2cic-zMFsK8SCBNwE53Sk" width=115 > <br> <sub> João Marcos Góes </sub>](https://www.linkedin.com/in/joaomarcosgoesdeoliveira/) 
+| :---: | :---: | :---: |
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+  
