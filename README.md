@@ -1,14 +1,34 @@
 # Safehouse
 
+### :page_facing_up: Sobre
 
-### Tecnologias
-
-* Esse projeto foi criado usando Angular v11
-
-### Depêndencias
+Esse repositório contém o frontend do nosso projeto de conclusão de curso. Ele foi criado usando Angular11 e Typescript.
+### :bookmark_tabs: Pré-requisitos
 
 * Node >= 12
-### Como rodar 
+
+### :scroll: Scripts 
+
+Script   | Função
+--------- | ------
+npm test | Roda todos os testes
+npm run build | Builda a aplicação
+npm run test:dev | Roda os testes com o navegador
+npm run test:terminal | Roda os testes apenas no terminal (Usado no pipeline)
+npm start | Roda a aplicação
+npm run ng | Roda a biblioteca ng
+npm run lint | Roda o lint na aplicação
+### :package: Bibliotecas
+
+* Angular v11
+* Husky
+* MaterialUI
+* angularx-qrcode
+* Bootstrap
+* Lint-staged
+* ngx-socket-io
+* Eslint
+### :arrow_forward: Como rodar 
 
 1. Clone o repositório
 
@@ -31,14 +51,14 @@ Comando para rodar o projeto localmente.
 $ npm start
 ```
 A aplicação estará disponivel na url `http://localhost:4200/`
-### Para rodar os testes 
+### :red_circle: Para rodar os testes 
 
 Rode o comando abaixo dentro da pasta do projeto
 ```
 $ npm t
 ```
 
-### Para fazer o build
+### :hammer: Para fazer o build
 
 Rode o comando abaixo dentro da pasta do projeto
 ```

@@ -7,7 +7,6 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
     "test:terminal": "ng test --karma-config=./karma.conf.js --no-progress --code-coverage",
     "test:dev": "ng test --karma-config=./karma.conf-dev.js --code-coverage"
   },
